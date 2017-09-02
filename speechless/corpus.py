@@ -11,7 +11,7 @@ from typing import List, Iterable, Callable, Tuple, Any, Optional, TypeVar, Dict
 from speechless.labeled_example import LabeledExample, LabeledSpectrogram, CachedLabeledSpectrogram, \
     LabeledExampleFromFile, PositionalLabel
 from speechless.tools import group, paginate, mkdir, duplicates, log
-
+from speechless.corpus_augmentation import AugmentedLabeledExampleFromFile, Augmentation
 
 class ParsingException(Exception):
     pass
@@ -96,7 +96,8 @@ class Corpus:
 
             examples = [
                 (
-                    LabeledExampleFromFile(
+                    # LabeledExampleFromFile(
+                    AugmentedLabeledExampleFromFile(augmentation=Augmentation.BackgroundEnvironmental,
                         audio_file=to_absolute(Path(audio_file_path)), id=id, label=label,
                         positional_label=None if positional_label == "" else PositionalLabel.deserialize(
                             positional_label)), Phase[phase])
