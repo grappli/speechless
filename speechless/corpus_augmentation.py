@@ -1,6 +1,6 @@
 __author__ = 'Steffen'
 
-from labeled_example import LabeledExample
+from speechless.labeled_example import LabeledExample
 import wavlib
 import os
 
