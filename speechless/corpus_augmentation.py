@@ -4,7 +4,7 @@ import os
 
 from speechless.labeled_example import LabeledExample
 from speechless import wavlib
-
+from enum import Enum
 
 class Augmentation(Enum):
     BackgroundEnvironmental = 'environmental'
