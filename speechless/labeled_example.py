@@ -7,8 +7,8 @@ import audioread
 import librosa
 import numpy
 import os
-from lazy import lazy
 from numpy import ndarray, mean, std, vectorize, dot
+from lazy import lazy
 from typing import List, Optional, Tuple, Callable
 
 from speechless.tools import name_without_extension, mkdir, write_text, log

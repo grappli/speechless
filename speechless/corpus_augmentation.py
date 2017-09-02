@@ -2,9 +2,17 @@ __author__ = 'Steffen'
 
 import os
 
-from speechless.labeled_example import LabeledExample
+from speechless.labeled_example import LabeledExample, PositionalLabel, LabeledExampleFromFile
 from speechless import wavlib
-from enum import Enum
+from enum import Enum, auto
+from lazy import lazy
+from typing import List, Optional
+from pathlib import Path
+import audioread
+import librosa
+
+from speechless.tools import name_without_extension, log
+
 
 class Augmentation(Enum):
     BackgroundEnvironmental = 'environmental'
@@ -31,21 +39,22 @@ class AugmentedLabeledExampleFromFile(LabeledExample):
             id = name_without_extension(audio_file)
 
         self.audio_file = audio_file
+        self.augmentation = augmentation
 
         super().__init__(
-            id=id, get_raw_audio=lambda: augment(self, audio_file),
+            id=id, get_raw_audio=lambda: self.augment(self),
             label=label, sample_rate=sample_rate_to_convert_to,
             fourier_window_length=fourier_window_length, hop_length=hop_length, mel_frequency_count=mel_frequency_count,
             label_with_tags=label_with_tags, positional_label=positional_label)
 
-    def augment(self, input_file):
+    def augment(self):
 
         if (self.augmentation == Augmentation.BackgroundEnvironmental or
            self.augmentation == Augmentation.BackgroundMusic or
            self.augmentation == Augmentation.BackgroundSpeech):
 
-            background_wav = wavlib.random_wav(augmentation)
-            output = wavlib.mix_wavs_raw(input_file, background_wav)
+            background_wav = wavlib.random_wav(self.augmentation)
+            output = wavlib.mix_wavs_raw(self.audio_file, background_wav)
             return output
 
         elif self.augmentation == Augmentation.Reverb:
