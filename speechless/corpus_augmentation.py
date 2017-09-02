@@ -1,8 +1,10 @@
 __author__ = 'Steffen'
 
-from speechless.labeled_example import LabeledExample
-import wavlib
 import os
+
+from speechless.labeled_example import LabeledExample
+from speechless import wavlib
+
 
 class Augmentation(Enum):
     BackgroundEnvironmental = 'environmental'
