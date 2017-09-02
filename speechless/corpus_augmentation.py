@@ -4,7 +4,7 @@ import os
 
 from speechless.labeled_example import LabeledExample, PositionalLabel, LabeledExampleFromFile
 from speechless import wavlib
-from enum import Enum, auto
+from enum import Enum
 from lazy import lazy
 from typing import List, Optional
 from pathlib import Path
@@ -18,8 +18,8 @@ class Augmentation(Enum):
     BackgroundEnvironmental = 'environmental'
     BackgroundSpeech = 'speech'
     BackgroundMusic = 'music'
-    Reverb = auto()
-    Speed = auto()
+    Reverb = 'reverb'
+    Speed = 'speed'
 
 class AugmentedLabeledExampleFromFile(LabeledExample):
     def __init__(self,
