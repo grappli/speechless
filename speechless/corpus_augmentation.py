@@ -42,18 +42,18 @@ class AugmentedLabeledExampleFromFile(LabeledExample):
         self.augmentation = augmentation
 
         super().__init__(
-            id=id, get_raw_audio=lambda: self.augment(self),
+            id=id, get_raw_audio=lambda: self.augment(),
             label=label, sample_rate=sample_rate_to_convert_to,
             fourier_window_length=fourier_window_length, hop_length=hop_length, mel_frequency_count=mel_frequency_count,
             label_with_tags=label_with_tags, positional_label=positional_label)
 
     def augment(self):
-
+        print("Augmenting file")
         if (self.augmentation == Augmentation.BackgroundEnvironmental or
            self.augmentation == Augmentation.BackgroundMusic or
            self.augmentation == Augmentation.BackgroundSpeech):
 
-            background_wav = wavlib.random_wav(self.augmentation)
+            background_wav = wavlib.random_wav(self.augmentation.value)
             output = wavlib.mix_wavs_raw(self.audio_file, background_wav)
             return output
 
