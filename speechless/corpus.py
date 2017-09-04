@@ -4,6 +4,7 @@ from abc import ABCMeta, abstractmethod
 from enum import Enum
 from multiprocessing.pool import Pool
 from pathlib import Path
+import speechless.configuration
 
 from collections import OrderedDict
 from typing import List, Iterable, Callable, Tuple, Any, Optional, TypeVar, Dict
@@ -98,6 +99,7 @@ class Corpus:
                 (
                     # LabeledExampleFromFile(
                     AugmentedLabeledExampleFromFile(augmentation=Augmentation.BackgroundEnvironmental,
+                        wavdirectory=speechless.configuration.default_data_directories.data_directory,
                         audio_file=to_absolute(Path(audio_file_path)), id=id, label=label,
                         positional_label=None if positional_label == "" else PositionalLabel.deserialize(
                             positional_label)), Phase[phase])
