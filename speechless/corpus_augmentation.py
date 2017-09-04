@@ -10,6 +10,7 @@ from typing import List, Optional
 from pathlib import Path
 import audioread
 import librosa
+from speechless.wavlib import WavTools
 
 from speechless.tools import name_without_extension, log
 
@@ -25,6 +26,7 @@ class AugmentedLabeledExampleFromFile(LabeledExample):
     def __init__(self,
                  audio_file: Path,
                  augmentation: Augmentation,
+                 wavdirectory: str,
                  id: Optional[str] = None,
                  sample_rate_to_convert_to: int = 16000,
                  label: Optional[str] = "nolabel",
@@ -40,6 +42,7 @@ class AugmentedLabeledExampleFromFile(LabeledExample):
 
         self.audio_file = audio_file
         self.augmentation = augmentation
+        self.wavlib = WavTools(wavdirectory)
 
         super().__init__(
             id=id, get_raw_audio=lambda: self.augment(),
@@ -54,7 +57,7 @@ class AugmentedLabeledExampleFromFile(LabeledExample):
            self.augmentation == Augmentation.BackgroundSpeech):
 
             background_wav = wavlib.random_wav(self.augmentation.value)
-            output = wavlib.mix_wavs_raw(self.audio_file, background_wav)
+            output = WavTools.mix_wavs_raw(self.audio_file, background_wav)
             return output
 
         elif self.augmentation == Augmentation.Reverb:
