@@ -10,6 +10,12 @@ from speechless.labeled_example import LabeledExample
 
 from speechless.configuration import Configuration
 
+def test_sample():
+    sample = np.load('it_is_perhaps_well.npy')
+
+    wav2letter = Configuration.german().load_best_german_model()
+
+    feed_model(wav2letter, sample)
 
 def get_wav():
     if args.video:
