@@ -122,6 +122,7 @@ class LibriSpeechCorpus(Corpus):
     def _download_and_unpack_if_not_yet_done(self, corpus_name: str) -> Path:
         file_name = corpus_name + self.tar_gz_extension
         file_url_or_path = self.base_url_or_directory + file_name
+        print(file_url_or_path)
 
         target_directory = self.base_directory / corpus_name
 

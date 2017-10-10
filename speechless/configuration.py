@@ -49,6 +49,7 @@ class Configuration:
         self.directories = directories
         self.spectrogram_cache_directory = directories.spectrogram_cache_base_directory / name
         self.corpus_directory = directories.corpus_base_directory / name
+        print(self.corpus_directory)
         self.corpus_from_directory = corpus_from_directory
         self.allowed_characters = allowed_characters
         self.batch_size = batch_size
@@ -83,7 +84,8 @@ class Configuration:
 
         return Configuration(name="German",
                              allowed_characters=german_frequent_characters,
-                             corpus_from_directory=load_cached_corpus if from_cached else german_corpus)
+                             corpus_from_directory=load_cached_corpus if from_cached else german_corpus, 
+                             directories=default_data_directories)
 
     @staticmethod
     def mixed_german_english():

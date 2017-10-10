@@ -71,6 +71,7 @@ class Corpus:
                 writer.writerow(row)
 
     def save(self, corpus_csv_file: Path, use_relative_audio_file_paths: bool = True):
+        print(corpus_csv_file)
         import csv
         with corpus_csv_file.open('w', encoding='utf8') as opened_csv:
             writer = csv.writer(opened_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
