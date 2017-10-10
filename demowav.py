@@ -16,9 +16,10 @@ def test_sample():
     filename = 'ALC_0062014047_h_00.wav'
 
     wav2letter = Configuration.german().load_best_german_model()
-    example = LabeledExampleFromFile(Path(filename))
+    rate, data = wavfile.read(filename)
 
-    feed_speechless(wav2letter, example)
+    ex = LabeledExample(get_raw_audio=lambda: data)
+    feed_speechless(wav2letter, ex)
 
 def get_wav():
     if args.video:
