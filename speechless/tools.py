@@ -1,18 +1,11 @@
-import logging
-import sys
-from itertools import groupby
 from pathlib import Path
-from time import strftime
 
 from collections import OrderedDict, Counter
-from logging import getLogger, StreamHandler
 from os import makedirs, path
-from typing import List, Iterable, TypeVar, Callable, Optional, Dict, Tuple, Any
-
-E = TypeVar('Element')
+from typing import List, Any
 
 
-def single(sequence: List[E]) -> E:
+def single(sequence: List) -> Any:
     first = sequence[0]
 
     assert (len(sequence) == 1)
@@ -20,13 +13,11 @@ def single(sequence: List[E]) -> E:
     return first
 
 
-def single_or_none(sequence: List[E]) -> Optional[E]:
-    assert (len(sequence) <= 1)
-
+def single_or_none(sequence: List) -> Any:
     return next(iter(sequence), None)
 
 
-def read_text(path: Path, encoding=None) -> str:
+def read_text(path: Path, encoding=None):
     """
     Not Path.read_text for compatibility with Python 3.4.
     """
@@ -34,15 +25,7 @@ def read_text(path: Path, encoding=None) -> str:
         return f.read()
 
 
-def write_text(path: Path, text: str, encoding=None):
-    """
-    Not Path.write_text for compatibility with Python 3.4.
-    """
-    with path.open(mode='w', encoding=encoding) as f:
-        f.write(text)
-
-
-def mkdir(directory: Path) -> None:
+def mkdir(directory: Path):
     """
     Not Path.mkdir() for compatibility with Python 3.4.
     """
@@ -64,49 +47,9 @@ def extension(audio_file: Path) -> str:
     return path.splitext(audio_file.name)[1]
 
 
-def distinct(sequence: List[E]) -> List[E]:
+def distinct(sequence: List) -> List:
     return list(OrderedDict.fromkeys(sequence))
 
 
-def count_summary(sequence: List[E]) -> str:
-    return ", ".join(["{}: {}".format(tag, count) for tag, count in Counter(sequence).most_common()])
-
-
-K = TypeVar('Key')
-V = TypeVar('Value')
-
-
-def group(iterable: Iterable[E], key: Callable[[E], K], value: Callable[[E], V] = lambda x: x) -> Dict[K, Tuple[V]]:
-    return OrderedDict((k, tuple(map(value, values))) for k, values in groupby(sorted(iterable, key=key), key))
-
-
-def timestamp() -> str:
-    return strftime("%Y%m%d-%H%M%S")
-
-
-def duplicates(sequence: Iterable[E]) -> List[E]:
-    return [item for item, count in Counter(sequence).items() if count > 1]
-
-
-def average_or_nan(numbers: List[float]) -> float:
-    if len(numbers) == 0:
-        return float('nan')
-
-    return sum(numbers) / len(numbers)
-
-
-def paginate(sequence: List[E], page_size: int) -> Iterable[List[E]]:
-    for start in range(0, len(sequence), page_size):
-        yield sequence[start:start + page_size]
-
-
-logger = getLogger("results")
-logger.setLevel(logging.INFO)
-
-handler = StreamHandler(sys.stdout)
-handler.setLevel(logging.INFO)
-logger.addHandler(handler)
-
-
-def log(obj: Any):
-    logger.info(str(obj))
+def count_summary(list: List) -> str:
+    return ", ".join(["{}: {}".format(tag, count) for tag, count in Counter(list).most_common()])

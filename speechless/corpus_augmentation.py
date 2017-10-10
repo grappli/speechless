@@ -51,7 +51,6 @@ class AugmentedLabeledExampleFromFile(LabeledExample):
             label_with_tags=label_with_tags, positional_label=positional_label)
 
     def augment(self):
-        print("Augmenting file")
         if (self.augmentation == Augmentation.BackgroundEnvironmental or
            self.augmentation == Augmentation.BackgroundMusic or
            self.augmentation == Augmentation.BackgroundSpeech):
