@@ -9,7 +9,8 @@ import speechless.configuration
 from collections import OrderedDict
 from typing import List, Iterable, Callable, Tuple, Any, Optional, TypeVar, Dict
 
-from speechless.labeled_example import LabeledExample, LabeledSpectrogram, CachedLabeledSpectrogram, \
+from speechless.labeled_example import LabeledExample
+from speechless.spectrogram_batch import LabeledSpectrogram, CachedLabeledSpectrogram, \
     LabeledExampleFromFile, PositionalLabel
 from speechless.tools import group, paginate, mkdir, duplicates, log
 from speechless.corpus_augmentation import AugmentedLabeledExampleFromFile, Augmentation
