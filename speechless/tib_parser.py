@@ -35,8 +35,7 @@ def get_segments(file):
     return segments
 
 def cut_wav(file_id, wav_file, segments):
-    data = librosa.load(wav_file, sr=16000)[0]
-    print(data.shape)
+    data = librosa.load(wav_file, sr=16000)[0][0]
     files = []
     for segment in segments:
         wav_segment = data[segment['begin'] * 16:segment['end'] * 16]
