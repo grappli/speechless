@@ -6,10 +6,11 @@ import librosa
 import subprocess
 from shutil import copyfileobj
 
-from speechless.german_corpus import german_frequent_characters
-
 from os import listdir
 from os.path import splitext
+import string
+
+german_frequent_characters = list(string.ascii_lowercase + " 'äöüß")
 
 def clean_phrase(phrase):
     return str([c for c in list(phrase.lower()) if c in german_frequent_characters])
