@@ -38,7 +38,7 @@ def cut_wav(file_id, wav_file, segments):
     data = librosa.load(wav_file, sr=16000)[0]
     files = []
     for segment in segments:
-        wav_segment = data[segment['begin'] * 16000:segment['end'] * 16000]
+        wav_segment = data[segment['begin'] * 16:segment['end'] * 16]
         file = "/data/TIB_dataset/wavs/" + file_id + '_' + str(segment['begin']) + '.wav'
         librosa.output.write_wav(file, wav_segment, sr=16000)
         files.append(file)
