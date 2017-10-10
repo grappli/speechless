@@ -6,8 +6,13 @@ import librosa
 import subprocess
 from shutil import copyfileobj
 
+from speechless.german_corpus import german_frequent_characters
+
 from os import listdir
 from os.path import splitext
+
+def clean_phrase(phrase):
+    return str([c for c in list(phrase.lower()) if c in german_frequent_characters])
 
 def get_segments(file):
     # change encoding to allow german character reading without error
@@ -25,7 +30,7 @@ def get_segments(file):
         begin = int(item.get('start'))
         end = int(item.get('end'))
         phrase = item.text
-        segments.append({'begin': begin, 'end': end, 'phrase': phrase})
+        segments.append({'begin': begin, 'end': end, 'phrase': clean_phrase(phrase)})
     return segments
 
 def cut_wav(file_id, wav_file, segments):
