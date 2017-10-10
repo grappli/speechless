@@ -8,6 +8,7 @@ from shutil import copyfileobj
 
 from os import listdir
 from os.path import splitext
+from os import remove
 import string
 
 german_frequent_characters = list(string.ascii_lowercase + " 'äöüß")
@@ -19,6 +20,7 @@ def get_segments(file):
     # change encoding to allow german character reading without error
     firstline = "<?xml version='1.0' encoding='ISO8859-1'?>"
     newfile = 'temp.xml'
+    remove(newfile)
     with open(file, 'r', encoding='utf8') as from_file:
         with open(newfile, 'w', encoding='utf8') as to_file:
             from_file.readline()
@@ -44,6 +46,13 @@ def cut_wav(file_id, wav_file, segments):
         files.append(file)
 
     return files
+
+wav_file = '../9424.wav'
+data = librosa.load(wav_file, sr=16000)[0]
+print(data.shape)
+wav_segment = data[5532000:5599000]
+print(wav_segment)
+librosa.output.write_wav('out.wav', wav_segment, sr=16000)
 
 segs = []
 files = []
