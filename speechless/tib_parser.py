@@ -28,11 +28,11 @@ def cut_wav(wav_file, segments):
 
 filename = '11406'
 
-command = 'avconv  -i /data/videos/{}.mp4 -ac 1 -ar 16000 -vn /data/videos/{}.wav'.format(filename, filename)
+command = 'avconv  -i /data/TIB_dataset/videos/{}.mp4 -ac 1 -ar 16000 -vn /data/TIB_dataset/videos/{}.wav'.format(filename, filename)
 subprocess.call(command, shell=True)
 
-segs = get_segments('/data/transcripts/{}.xml'.format(filename))
-files = cut_wav('/data/videos/{}.wav'.format(filename), segs)
+segs = get_segments('/data/TIB_dataset/transcripts/{}.xml'.format(filename))
+files = cut_wav('/data/TIB_dataset/videos/{}.wav'.format(filename), segs)
 
 with open('file.csv', 'w') as csvfile:
     writer = csv.writer(csvfile)
