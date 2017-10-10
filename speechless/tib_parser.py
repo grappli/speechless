@@ -10,8 +10,8 @@ def get_segments(file):
     # change encoding to allow german character reading without error
     firstline = "<?xml version='1.0' encoding='ISO8859-1'?>"
     newfile = 'temp.xml'
-    with open(file, 'r') as from_file:
-        with open(newfile, 'w') as to_file:
+    with open(file, 'r', encoding='utf8') as from_file:
+        with open(newfile, 'w', encoding='utf8') as to_file:
             from_file.readline()
             to_file.write(firstline)
             copyfileobj(from_file, to_file)
@@ -19,19 +19,19 @@ def get_segments(file):
     segments = []
     e = ElementTree.parse(newfile).getroot().findall('text')[0]
     for item in e.findall('phrase'):
-        begin = item.get('start')
-        end = item.get('end')
+        begin = int(item.get('start'))
+        end = int(item.get('end'))
         phrase = item.text
         segments.append({'begin': begin, 'end': end, 'phrase': phrase})
     return segments
 
 def cut_wav(wav_file, segments):
-    data = librosa.load(wav_file + '.wav', sr=16000)[0]
+    data = librosa.load(wav_file, sr=16000)[0]
     files = []
     for segment in segments:
         wav_segment = data[segment['begin'] * 16000:segment['end'] * 16000]
         file = wav_file + '_' + str(segment['begin']) + '.wav'
-        librosa.write_wav(file, wav_segment, sr=16000)
+        librosa.output.write_wav(file, wav_segment, sr=16000)
         files.append(file)
 
     return files
@@ -44,7 +44,7 @@ subprocess.call(command, shell=True)
 segs = get_segments('/data/TIB_dataset/transcripts/{}.xml'.format(filename))
 files = cut_wav('/data/TIB_dataset/videos/{}.wav'.format(filename), segs)
 
-with open('file.csv', 'w') as csvfile:
+with open('file.csv', 'w', encoding='utf8') as csvfile:
     writer = csv.writer(csvfile)
     for i, seg in enumerate(segs):
         writer.writerow(('{}_{}'.format(filename, seg['begin']), files[i], seg['phrase'], 'train'))
