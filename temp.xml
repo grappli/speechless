@@ -1,186 +1,259 @@
 <?xml version='1.0' encoding='ISO8859-1'?><decoded-data>
 	<general>
-		<videolength>762673</videolength>
-		<title>B_1613_de</title>
+		<videolength>429888</videolength>
+		<title>KR05 Wir berechnen den Wertverlust unseres Vermögens - lineare und degressive Abschreibung, Buchwert_srt</title>
 	</general>
 	<text>
-		<phrase end="47048" start="44104">Zunächst der Versuchsaufbau.</phrase>
-		<phrase end="50136" start="47064">Vorn links die Filmkamera.</phrase>
-		<phrase end="53040" start="50161">Im Hintergrund die horizontal angeordnete</phrase>
-		<phrase end="54763" start="53040">Zeitstand-Zugvorrichtung.</phrase>
-		<phrase end="58809" start="54754">Sie ist speziell für kinematographische
-Belange ausgelegt.</phrase>
-		<phrase end="64476" start="59731">Dahinter schließlich die Beleuchtungsquelle
-mit Polarisationsfilter.</phrase>
-		<phrase end="68132" start="65545">In die Klemmbacken der Zugvorrichtung
-werden die</phrase>
-		<phrase end="70442" start="68157">auf der Rückseite mattierten Schulterstäbe</phrase>
-		<phrase end="74077" start="70459">aus glasklarem Polystyrol eingespannt.</phrase>
-		<phrase end="76105" start="74077">Sie sind 3 mm dick</phrase>
-		<phrase end="79735" start="76105">und im Bereich der Meßlänge 10 mm breit.</phrase>
-		<phrase end="81255" start="79735">Im Material vorhandene</phrase>
-		<phrase end="84047" start="81255">ortsvariable molekulare Orientierungen,</phrase>
-		<phrase end="87047" start="84047">die durch den Spritzgießprozeß
-entstanden sind,</phrase>
-		<phrase end="89413" start="87054">haben doppelbrechende Eigenschaften</phrase>
-		<phrase end="91299" start="89413">und sind bei polarisiertem Licht</phrase>
-		<phrase end="94989" start="91299">und im unbelasteten Zustand an
-den parabelförmigen</phrase>
-		<phrase end="98237" start="94989">Isochromaten deutlich zu erkennen.</phrase>
-		<phrase end="102595" start="99361">Bei Belastung überlagern sich zusätzlich</phrase>
-		<phrase end="107417" start="102595">spannungs- und deformationsbedingte
-Effekte.</phrase>
-		<phrase end="111600" start="108020">Die zeitabhängige Materialverformung
-wird mit Hilfe eines</phrase>
-		<phrase end="114529" start="111600">über der Probe angeordneten induktiven</phrase>
-		<phrase end="119682" start="114529">Wegaufnehmers und eines
-Schreibers registriert.</phrase>
-		<phrase end="122556" start="119682">Sowohl die Gleichmaßdehnung als auch</phrase>
-		<phrase end="125911" start="122555">inhomogene Deformationsmechanismen
-wie Fließzonen und</phrase>
-		<phrase end="129309" start="125912">Einschnürungen werden gleichzeitig
-kinematographisch</phrase>
-		<phrase end="132227" start="129309">bis zum Bruch dokumentiert.</phrase>
-		<phrase end="133936" start="132333">Belastungsbeginn.</phrase>
-		<phrase end="136395" start="134085">Gleichmaßdehnung.</phrase>
-		<phrase end="140221" start="136531">Fließzonenbildung und Bruch.</phrase>
-		<phrase end="146697" start="144412">Fließzonenbildung und Brucheinleitung</phrase>
-		<phrase end="148222" start="146713">sollen zunächst an einer Probe</phrase>
-		<phrase end="152689" start="148222">gezeigt werden, die mit 47 N/mm^2</phrase>
-		<phrase end="154371" start="152689">belastet wird und im</phrase>
-		<phrase end="157568" start="154371">nichtpolarisierten Licht zeitgerafft mit</phrase>
-		<phrase end="160512" start="157568">60 B/h beobachtet wird.</phrase>
-		<phrase end="164250" start="160512">Die Fließzonen laufen nicht ganz bis zu
-den Stabrändern.</phrase>
-		<phrase end="167505" start="164265"> Dies ist bedingt durch starke
-molekulare Orientierungen</phrase>
-		<phrase end="170512" start="167505">und Druckeigenspannungen in der Spritzhaut.</phrase>
-		<phrase end="175661" start="170512">Die Spritztemperatur der Probe betrug
-180 Grad Celsius.</phrase>
-		<phrase end="177794" start="175661">Schließlich ein Sprödbruch</phrase>
-		<phrase end="181534" start="177794">mit geringen plastischen Verformungsanteilen.</phrase>
-		<phrase end="184877" start="181928">Alle folgenden Versuche werden in polarisiertem</phrase>
-		<phrase end="188670" start="184877">Licht beobachtet, wobei die Spritztemperatur
-variiert wird;</phrase>
-		<phrase end="191677" start="188670"> wir beginnen mit 180 Grad Celsius;</phrase>
-		<phrase end="192990" start="191677"> die Belastungsart</phrase>
-		<phrase end="195458" start="193013">wird jeweils zweifach variiert.</phrase>
-		<phrase end="197252" start="195473">Zum einen nämlich wird mit einer</phrase>
-		<phrase end="200689" start="197252">geringfügigen Lastüberhöhung begonnen, so daß,</phrase>
-		<phrase end="205712" start="200689">wie hier erkennbar, bereits Fließzonen
-vorhanden sind.</phrase>
-		<phrase end="206975" start="205712">Man erkennt, daß die</phrase>
-		<phrase end="210785" start="206975">äußerst niedrige Spritztemperatur von
-180 Grad Celsius</phrase>
-		<phrase end="213420" start="210800">extreme Orientierungsinhomogenitäten</phrase>
-		<phrase end="216333" start="213420">über Querschnitt und Längsachse zur
-Folge hat.</phrase>
-		<phrase end="219992" start="216333">Die Belastung wird dann
-schnell aufgebracht.</phrase>
-		<phrase end="223308" start="220611">Die hohe Isochromatendichte im
-Bereich der Spritzhaut</phrase>
-		<phrase end="225332" start="223316">belegt, daß hier während des</phrase>
-		<phrase end="227396" start="225332">Spritzgießprozesses besonders starke</phrase>
-		<phrase end="231014" start="227396">molekulare Orientierungen erzeugt wurden.</phrase>
-		<phrase end="233849" start="231427">Ohne jede Vorankündigung wird die Probe bei der</phrase>
-		<phrase end="237670" start="233849">rechten Fließzone spröde brechen.</phrase>
-		<phrase end="245451" start="243827">Nun die andere Belastungsart.</phrase>
-		<phrase end="248260" start="245452">Bringt man dieselbe Belastung schonend auf,</phrase>
-		<phrase end="251894" start="248260">so bleiben die Proben zunächst
-fließzonenfrei.</phrase>
-		<phrase end="256952" start="255200">In diesem Falle kündigt sich der Bruch</phrase>
-		<phrase end="260010" start="256960">häufig schon vorzeitig an.</phrase>
-		<phrase end="262635" start="260525">Bereits geringste plastische Verformungen</phrase>
-		<phrase end="263841" start="262635">in der näheren Umgebung einer</phrase>
-		<phrase end="265722" start="263841">Fließzone lassen diese</phrase>
-		<phrase end="267836" start="265722">- wie hier im linken Bilddrittel -</phrase>
-		<phrase end="270845" start="267836">zu einer Art Isochromatenquelle werden.</phrase>
-		<phrase end="274184" start="271320">Ursache hierfür sind molekulare Orientierungen,</phrase>
-		<phrase end="277796" start="274184">die bei der lokalen Deformation erzeugt werden.</phrase>
-		<phrase end="294735" start="292716">Wiederholen wir die brucheinleitenden</phrase>
-		<phrase end="297493" start="294735">inhomogenen Deformationserscheinungen mit</phrase>
-		<phrase end="299770" start="297493">zusätzlicher tricktechnischer Zeitdehnung.</phrase>
-		<phrase end="302707" start="299770">Fließzone im linken Bilddrittel.</phrase>
-		<phrase end="305820" start="303627">Beginn der plastischen Deformation</phrase>
-		<phrase end="307470" start="305820">in Fließzonenumgebung</phrase>
-		<phrase end="311489" start="307470">ca. 10 Minuten vor dem Bruch.</phrase>
-		<phrase end="366664" start="361518">Laterales Wachstum der Fließzone
-und nachfolgender Bruch.</phrase>
-		<phrase end="372772" start="367447">Das Bruchbild zeigt stärkere
-plastische Verformungsanteile.</phrase>
-		<phrase end="395554" start="393582">Bei einer Spritztemperatur von</phrase>
-		<phrase end="400979" start="395554">200 Grad Celsius homogenere
-molekulare Orientierungen.</phrase>
-		<phrase end="409784" start="406958">Die Fließzone rechts von der Bildmitte</phrase>
-		<phrase end="411934" start="409784">leitet den Bruch mit geringfügiger</phrase>
-		<phrase end="414888" start="411934"> plastischer Deformation ein.</phrase>
-		<phrase end="420531" start="416078">Rückstellung der reversiblen
-Dehnungsanteile.</phrase>
-		<phrase end="424068" start="421377">Erst bei tricktechnischer Zeitdehnung ist</phrase>
-		<phrase end="429623" start="424068">die brucheinleitende Deformationsphase
-in Einzelschritten wahrnehmbar.</phrase>
-		<phrase end="440641" start="438007">Bringt man dagegen die Last langsam auf,</phrase>
-		<phrase end="443972" start="440657">so ist die Deformation zunächst homogen.</phrase>
-		<phrase end="459819" start="456621">Bis sich schließlich Fließzonen bilden</phrase>
-		<phrase end="474178" start="469106">und eine brucheinleitende Verformung.</phrase>
-		<phrase end="479955" start="478965"> In der Wiederholung</phrase>
-		<phrase end="482217" start="479955">verdeutlicht die größere Zeitdehnung,</phrase>
-		<phrase end="485554" start="482217">wie fließzonenbenachbarte
-plastische Deformation</phrase>
-		<phrase end="489579" start="485554"> und laterales Fließzonenwachstum ablaufen.</phrase>
-		<phrase end="499996" start="494798">Das Bruchbild zeigt geringfügige plastische Verformungsanteile.</phrase>
-		<phrase end="517767" start="513588">Geringere molekulare Orientierungen
-und homogenere Verteilung</phrase>
-		<phrase end="521981" start="517767">bei einer Spritztemperatur von
-220 Grad Celsius.</phrase>
-		<phrase end="526813" start="521981">Zunächst in den fließzonenfreien
-Probenbereichen Gleichmaßdehnung.</phrase>
-		<phrase end="529766" start="526813">Spröder Bruch rechts.</phrase>
-		<phrase end="537850" start="533166">Homogene Deformation nach langsamer Lastaufbringung.</phrase>
-		<phrase end="552732" start="550738">Fließzonenbildung.</phrase>
-		<phrase end="567439" start="565122">Die Spritzhaut bleibt bei den</phrase>
-		<phrase end="571492" start="567455">nicht bruchbeteiligten Fließzonen
-unversehrt.</phrase>
-		<phrase end="582346" start="577399">Zeitgedehnte Teilwiederholung der
-brucheinleitenden Deformationsprozesse.</phrase>
-		<phrase end="586683" start="582716">Plastische Deformation in
-Fließzonenumgebung.</phrase>
-		<phrase end="596839" start="591585">Laterales Fließzonenwachstum mit
-nachfolgendem Bruch.</phrase>
-		<phrase end="614092" start="609941">Die hohe Spritztemperatur von
-240 Grad Celsius</phrase>
-		<phrase end="618595" start="614092">hat nur geringe molekulare
-Orientierungen zur Folge.</phrase>
-		<phrase end="628662" start="626412">Da die Lastüberhöhung in diesem Fall</phrase>
-		<phrase end="630462" start="628662">etwas schwächer gewählt wurde,</phrase>
-		<phrase end="634725" start="630462">kündigt sich der Bruch äußerst
-kurzfristig an.</phrase>
-		<phrase end="642165" start="638965">Dasselbe zeitgedehnt.</phrase>
-		<phrase end="655796" start="651254">Bruchbild ohne plastische Verformungsanteile.</phrase>
-		<phrase end="662516" start="657708">Erhöhte Anzahl von Fließzonen bei
-geringfügig gesteigerter Belastung.</phrase>
-		<phrase end="668543" start="667019">Der Bruch wird an der linken</phrase>
-		<phrase end="671076" start="668543">Fließzone erfolgen, die als erste</phrase>
-		<phrase end="672964" start="671076">und am stärksten durch plastische</phrase>
-		<phrase end="675606" start="672964">Deformation gekennzeichnet ist.</phrase>
-		<phrase end="682483" start="678410">Langsamer Abbau der reversiblen
-Dehnungsanteile.</phrase>
-		<phrase end="685713" start="683560"> Bei Zeitdehnung wird deutlich,</phrase>
-		<phrase end="689792" start="685713">daß wiederum plastische Deformation
-und laterales Fließzonenwachstum</phrase>
-		<phrase end="691388" start="689791">kombiniert auftreten.</phrase>
-		<phrase end="693007" start="691388">Daneben ist eine Verdickung</phrase>
-		<phrase end="697080" start="693007">der bruchbeteiligten Fließzone erkennbar.</phrase>
-		<phrase end="722609" start="718688">Bei bestimmten Belastungsverhältnissen
-wird die Fließzonenbildung</phrase>
-		<phrase end="726617" start="722609">im gleichen Material vollständig
-unterdrückt.</phrase>
-		<phrase end="749616" start="746743">Nach einer langen Phase der
-Gleichmaßdehnung</phrase>
-		<phrase end="752705" start="749616">erfolgt stattdessen eine
-inhomogene Deformation</phrase>
-		<phrase end="756085" start="752705">in Form einer Einschnürung.</phrase>
-		<phrase end="758648" start="756889">Über das Phänomen der Einschnürung</phrase>
-		<phrase end="762673" start="758648">berichtet IWF-Film B 1614.</phrase>
+		<phrase end="4215" start="615">Willkommen zu unserem kleinen
+1x1 der Kostenrechnung.</phrase>
+		<phrase end="5840" start="4240">Mein Name ist Dr. Lauth.</phrase>
+		<phrase end="9532" start="5865">Unsere Frage heute lautet:
+Was ist AfA? Wir haben über</phrase>
+		<phrase end="13357" start="9557">den Unterschied zwischen
+Ausgabe und Aufwand gesprochen.</phrase>
+		<phrase end="16315" start="13382">Oft treffen diese
+beiden Terme gleichzeitig</phrase>
+		<phrase end="19607" start="16340">auf einen Geschäftsvorfall
+zu. Bei der AfA - der</phrase>
+		<phrase end="22899" start="19632">Abschreibung - trifft dies
+jedoch nicht zu: Hier</phrase>
+		<phrase end="26990" start="22923">betrachten wir einen Aufwand,
+der nicht mit einer Auszahlung</phrase>
+		<phrase end="30548" start="27015">einhergeht. Wir werden
+ärmer - aber unsere flüssigen</phrase>
+		<phrase end="34106" start="30573">Mittel werden nicht
+weniger. Das Finanzamt übersetzt</phrase>
+		<phrase end="37799" start="34132">AfA mit "Absetzung für
+Abnutzung" im Handelsgesetzbuch</phrase>
+		<phrase end="40823" start="37823">steht es für "Aufwand
+für Abschreibung". Die</phrase>
+		<phrase end="45115" start="40848">Abschreibung quantifiziert
+den Wertverlust das Anlagevermögens.</phrase>
+		<phrase end="47540" start="45140">Wir werden
+hier nur zweit Arten der</phrase>
+		<phrase end="50965" start="47565">Abschreibung diskutieren,
+die lineare Abschreibung</phrase>
+		<phrase end="54323" start="50990">und die geometrisch-
+degressive Abschreibung. Dei</phrase>
+		<phrase end="58281" start="54348">der linearen Abschreibung
+sinkt der Wert eines Anlagegutes</phrase>
+		<phrase end="61307" start="58307">linear mit der Zeit
+ab. Der Anfangswert sind</phrase>
+		<phrase end="64999" start="61332">die Anschaffungs- oder
+Herstellungskosten. (in unserem</phrase>
+		<phrase end="67023" start="65023">Beispiel "Verpackungsmaschine"</phrase>
+		<phrase end="69648" start="67048">10000 .) Unsere Maschine wird 10 Jahre</phrase>
+		<phrase end="73073" start="69673">genutzt, danach ist der
+Wert auf 0 abgesunken. Pro</phrase>
+		<phrase end="76231" start="73098">Jahr verliert die Maschine
+1000  an Wert; wir</phrase>
+		<phrase end="79590" start="76257">haben einen linearen
+AfA-Satz von 10% - und einen</phrase>
+		<phrase end="85238" start="82971">AfA-Betrag von 1000 Euro pro Jahr.</phrase>
+		<phrase end="88196" start="85263">Die Formeln zur
+Berechnung von Abschreibung</phrase>
+		<phrase end="92154" start="88221">und Buchwert bei linearer
+AfA sind hier zusammen gestellt.</phrase>
+		<phrase end="96112" start="92179">Der AfA-Satz errechnet
+sich als 100 % durch Nutzungsdauer.</phrase>
+		<phrase end="99138" start="96138">Die lineare AfA
+ist das Produkt aus AfA-Satz</phrase>
+		<phrase end="102296" start="99163">mal Anschaffungskosten.
+Und der Restwert (oder</phrase>
+		<phrase end="105654" start="102321">Buchwert) ergibt sich als
+Buchwert der Vorperiode</phrase>
+		<phrase end="108746" start="105679">abzüglich der AfA. Win
+weiteres Beispiel: die</phrase>
+		<phrase end="112104" start="108771">Anschaffungskosten einer
+Maschine betragen 100000</phrase>
+		<phrase end="115596" start="112129">Euro; die Nutzungsdauer fünf
+Jahre. Wenn wir linear</phrase>
+		<phrase end="119488" start="115621">abschreiben, ist der AfA-Satz
+100% durch fünf, also 20 %.</phrase>
+		<phrase end="123046" start="119513">Die lineare AfA errechnet
+sich zu 20 Prozent von 100</phrase>
+		<phrase end="125364" start="123071">000 , also 20 000 . Der
+Restwert nach einem Jahr</phrase>
+		<phrase end="128989" start="125389">80 000 , nach zwei Jahren
+60 000 , nach drei Jahren</phrase>
+		<phrase end="129520" start="126387">40 000 , nach vier
+Jahren 20 000 ; nach fünf</phrase>
+		<phrase end="132583" start="129050">Jahren ist die Maschine
+abgeschrieben; sie steht mit</phrase>
+		<phrase end="136157" start="132557">einem Euro Erinnerungswert
+in den Büchern. Bewegliche</phrase>
+		<phrase end="139515" start="136182">Güter des Anlagevermögens
+(namentlich Pkw) werden</phrase>
+		<phrase end="141473" start="139540">häufig geometrisch- degressiv</phrase>
+		<phrase end="144366" start="141499">abgeschrieben, d.h. sie verlieren am Anfang</phrase>
+		<phrase end="147790" start="144390">ihrer Nutzungsdauer mehr
+an Wert als am Ende. Auch</phrase>
+		<phrase end="151148" start="147815">bei die degressive
+Abschreibung basiert auf einem</phrase>
+		<phrase end="155174" start="151174">AfA-Satz, dieser wird jedoch
+nicht auf den Anschaffungswert</phrase>
+		<phrase end="158266" start="155199">angewendet, sondern
+jeweils auf den Restwert.</phrase>
+		<phrase end="161757" start="158290">Die AfA-Sätze bei der
+degressiven AfA sind deutlich</phrase>
+		<phrase end="164782" start="161782">höher als bei der linearen
+AfA - üblich sind</phrase>
+		<phrase end="168540" start="164807">z.B. das 3-fache oder 2,5-fache
+des linearen AfA-Satzes</phrase>
+		<phrase end="171632" start="168565">(manchmal gesetzlich
+nach oben limitiert) Die</phrase>
+		<phrase end="175124" start="171657">degressive AfA errechnet
+sich dann aus AfA-Satz mal</phrase>
+		<phrase end="178074" start="174541">Restwert der Vorperiode. und
+der Restwert (Buchwert)</phrase>
+		<phrase end="181499" start="178099">ist nach wie vor der Buchwert
+der Vorperiode minus</phrase>
+		<phrase end="185124" start="181524">AfA. Wenn wir im Beispiel
+von vorhier unser Anlagegut</phrase>
+		<phrase end="186925" start="183525">degressiv abschreiben - z.B.
+mit einem degressiven</phrase>
+		<phrase end="190017" start="186950">AfA-Satz von 25 % -
+verliert das Anlagegut im</phrase>
+		<phrase end="193375" start="190042">ersten Jahr 25 000 Euro
+an Wert (25 % von 100 000</phrase>
+		<phrase end="195933" start="193400">). Es bleiben also 75 000  Restwert.</phrase>
+		<phrase end="198491" start="195958">Im zweiten
+Jahr müssen wir 25 Prozent</phrase>
+		<phrase end="207051" start="203384">von 75 000  abschreiben,
+also 18 750  als degressive</phrase>
+		<phrase end="210342" start="207075">AfA, im dritten Jahr
+verringert sich die AfA auf</phrase>
+		<phrase end="213967" start="210367">14 074 , im vierten Jahr
+auf 10 547  und im fünften</phrase>
+		<phrase end="217259" start="213992">Jahr auf Zehntausende im
+kommenden Jahr 7 910 .</phrase>
+		<phrase end="220817" start="217284">Bei der degressiven AfA
+schreiben wir im Unterschied</phrase>
+		<phrase end="224509" start="220842">zur linearen AfA nicht auf
+Null ab, wir können deshalb</phrase>
+		<phrase end="224646" start="221579">auf die lineare AfA
+wechseln, um letztendlich</phrase>
+		<phrase end="228138" start="224671">doch zum Restwert Null zu
+gelangen. Für das externe</phrase>
+		<phrase end="231904" start="229305">Rechnungswesen - für
+"bilanzielle Abschreibungen"</phrase>
+		<phrase end="234267" start="231929">ist die AfA gesetzlich
+reglementiert, für das</phrase>
+		<phrase end="236929" start="234322">interne Rechnungswesen (die
+Kostenrechnung) können wir</phrase>
+		<phrase end="236929" start="236954">die "kalkulatorischen
+Abschreibungen" prinzipiell</phrase>
+		<phrase end="243891" start="240893">frei gestalten. Bilanziell
+schreiben wir gemäß der</phrase>
+		<phrase end="247783" start="243916">AfA-Tabellen ab - kalkulatorisch
+schreiben wir (möglichst</phrase>
+		<phrase end="251475" start="247808">realistisch) nach der zu
+erwartenden Nutzungsdauer ab.</phrase>
+		<phrase end="253588" start="250521">Bilanziell sind wir an
+die Abschreibungsbasis</phrase>
+		<phrase end="255820" start="251820">Anschaffungs- oder Herstellkosten
+gebunden - kalkulatorisch</phrase>
+		<phrase end="256367" start="254967">schreiben wir auf die</phrase>
+		<phrase end="258992" start="256392">erwarteten Wiederbeschaffungskosten ab.</phrase>
+		<phrase end="261687" start="258554">Hier ein kleiner
+Auszug aus einer AfA-Tabelle.</phrase>
+		<phrase end="264379" start="261712">Pkw sind sind zum
+Beispiel "ordentlich"</phrase>
+		<phrase end="267871" start="264404">innerhalb von sechs Jahren
+abzuschreiben, Notebooks</phrase>
+		<phrase end="270580" start="266980">innerhalb von drei Jahren.
+Gesetzlich ist momentan in</phrase>
+		<phrase end="274272" start="270605">Deutschland nur die lineare
+Abschreibung zulässig. Bis</phrase>
+		<phrase end="277830" start="274297">2007 war auch degressive
+Abschreibung für bewegliche</phrase>
+		<phrase end="279522" start="277855">Güter des Anlagevermögens</phrase>
+		<phrase end="282414" start="279547">erlaubt. (mit Grenz-AfA-Sätzen) Seitdem ist</phrase>
+		<phrase end="285905" start="282438">(mit der Ausnahme der Jahre
+2009 und 2010) nur noch</phrase>
+		<phrase end="289130" start="285930">lineare bilanzielle AfA zulässig.
+Wenn sich das</phrase>
+		<phrase end="293706" start="290106">Eigenkapital in einer Periode
+erhöht, haben wir einen</phrase>
+		<phrase end="295198" start="293731">Gewinn erwirtschaftet.</phrase>
+		<phrase end="298956" start="295223">Wenn sich das Eigenkapital
+vermindert, erwirtschafteten</phrase>
+		<phrase end="302514" start="298981">wir einen Verlust. Gewinn
+und Verlust fassen wir mit</phrase>
+		<phrase end="303864" start="300397">dem Oberbegriff "Erfolg"
+zusammen. Eine Möglichkeit</phrase>
+		<phrase end="307356" start="303889">der Erfolgsermittlung ist
+die Bildung der Differenz</phrase>
+		<phrase end="308055" start="304455">zwischen dem Eigenkapital
+am Ende und am Anfang einer</phrase>
+		<phrase end="311547" start="308080">Periode G/V=EK(n)-EK(v)
+Eine andere Möglichkeit der</phrase>
+		<phrase end="315105" start="311572">Erfolgsrechnung besteht
+in der Saldierung geeigneter</phrase>
+		<phrase end="317997" start="315130">Strömungsgrößen: Wir
+addieren all das, was</phrase>
+		<phrase end="321355" start="318022">uns reicher macht (alle
+Erträge) und ziehen davon</phrase>
+		<phrase end="325113" start="321380">alles ab, was uns ärmer
+gemacht hat (alle Aufwendungen)</phrase>
+		<phrase end="328805" start="325138">und erhalten damit
+ebenfalls den Erfolg einer Periode.</phrase>
+		<phrase end="331430" start="328830">Diese Art von
+Erfolgsrechnung, die auf</phrase>
+		<phrase end="335788" start="331455">Strömungsgrößen basiert, nennen
+wir Gewinn- und Verlustrechnung,</phrase>
+		<phrase end="338746" start="335813">kurz GuV. Diese
+Rechnung ist (genau wie die</phrase>
+		<phrase end="342239" start="338772">Bilanz) für die meisten
+Unternehmen vorgeschrieben.</phrase>
+		<phrase end="345596" start="342263">Man addiert zunächst alle
+Erlöse (im wesentlichen</phrase>
+		<phrase end="347222" start="345622">die Umsatzerlöse), zieht</phrase>
+		<phrase end="350114" start="347247">dann alle Aufwendungen ab (Materialaufwand,</phrase>
+		<phrase end="353938" start="350138">Personalaufwand und
+Abschreibungsaufwand) und erhält das</phrase>
+		<phrase end="357430" start="353963">"Ergebnis der gewöhnlichen
+Geschäftstätigkeit" (für</phrase>
+		<phrase end="360722" start="357455">die Muster GmbH: 275
+Millionen) Dieses operative</phrase>
+		<phrase end="364480" start="360747">Ergebnis entspricht ungefähr
+dem EBIT - earnings before</phrase>
+		<phrase end="367838" start="364505">interest and taxes. Vom
+Ergebnis der gewöhnlichen</phrase>
+		<phrase end="371130" start="367863">Geschäftstätigkeit gehen
+noch die Steuern ab und</phrase>
+		<phrase end="374422" start="371155">wir erhalten schließlich
+das Jahresergebnis. Das</phrase>
+		<phrase end="378514" start="374447">Jahresergebnis entspricht genau
+dem Zuwachs an Eigenkapital,</phrase>
+		<phrase end="381871" start="378538">welches wir aus Schlußbilanz
+und Eröffnungsbilanz</phrase>
+		<phrase end="385764" start="381897">erhalten haben. Wir können
+nicht nur die Strömungsgrößen,</phrase>
+		<phrase end="388588" start="385788">welche unser Eigenkapital-Konto betreffen,</phrase>
+		<phrase end="392013" start="388613">saldieren. (also Aufwendungen
+und Erträge) Sondern</phrase>
+		<phrase end="395171" start="392038">wir können auch die
+Strömungsgrößen, die unser</phrase>
+		<phrase end="398930" start="395197">Geldvermögen tangieren,
+saldieren, nämlich Einzahlungen</phrase>
+		<phrase end="402222" start="398955">und Auszahlungen. Wir
+erhalten als Ergebnis dann</phrase>
+		<phrase end="405980" start="402247">nicht den "Erfolg" sondern
+den sogenannten "Cash Flow".</phrase>
+		<phrase end="409672" start="406005">Der Cash Flow ist (genau wie
+der Ertrag) eine wichtige</phrase>
+		<phrase end="413097" start="409697">Kenngröße für die
+Wirtschaftlichkeit; enthält aber</phrase>
+		<phrase end="416522" start="413122">(im Gegensatz zum Erfolg)
+NICHT die Abschreibungen</phrase>
+		<phrase end="420080" start="416547">(= nicht zahlungswirksamer
+Aufwand) und wird deshalb</phrase>
+		<phrase end="423172" start="420105">von einigen Analysten bevorzugt.
+Man kann den</phrase>
+		<phrase end="426530" start="423197">Cash Flow aus dem Erfolg
+abschätzen, wenn man die</phrase>
+		<phrase end="429888" start="426555">Abschreibungen dazu summiert
+("Praktikerformel").</phrase>
 	</text>
 </decoded-data>
