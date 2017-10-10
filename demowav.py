@@ -7,7 +7,7 @@ import os
 import io
 import sys
 from speechless.labeled_example import LabeledExample, LabeledExampleFromFile
-from path import Path
+from pathlib import Path
 
 from speechless.configuration import Configuration
 
