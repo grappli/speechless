@@ -11,13 +11,11 @@ from speechless.labeled_example import LabeledExample
 from speechless.configuration import Configuration
 
 def test_sample():
-
-    filename = 'ALC_0062014047_h_00.wav'
+    sample = np.load('it_is_perhaps_well.npy')
 
     wav2letter = Configuration.german().load_best_german_model()
-    example = LabeledExample.from_file(filename)
 
-    feed_speechless(wav2letter, example)
+    feed_model(wav2letter, sample)
 
 def get_wav():
     if args.video:
