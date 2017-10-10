@@ -9,7 +9,7 @@ from lazy import lazy
 from numpy import ndarray, mean, std, vectorize, dot
 from typing import List, Callable, Optional
 
-from tools import name_without_extension
+from speechless.tools import name_without_extension
 
 
 class SpectrogramFrequencyScale(Enum):
