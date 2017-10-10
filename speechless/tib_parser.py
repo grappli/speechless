@@ -47,13 +47,6 @@ def cut_wav(file_id, wav_file, segments):
 
     return files
 
-wav_file = '../9424.wav'
-data = librosa.load(wav_file, sr=16000)[0]
-print(data.shape)
-wav_segment = data[5532000:5599000]
-print(wav_segment)
-librosa.output.write_wav('out.wav', wav_segment, sr=16000)
-
 segs = []
 files = []
 for file in listdir('/data/TIB_dataset/transcripts'):
