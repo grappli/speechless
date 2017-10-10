@@ -59,8 +59,9 @@ for file in listdir('/data/TIB_dataset/transcripts'):
     except subprocess.CalledProcessError:
         continue
 
-    segs.extend(get_segments('/data/TIB_dataset/transcripts/{}.xml'.format(filename)))
-    files.extend(cut_wav(filename, '/data/TIB_dataset/videos/{}.wav'.format(filename), segs))
+    new_segs = get_segments('/data/TIB_dataset/transcripts/{}.xml'.format(filename))
+    segs.extend(new_segs)
+    files.extend(cut_wav(filename, '/data/TIB_dataset/videos/{}.wav'.format(filename), new_segs))
 
 
 
