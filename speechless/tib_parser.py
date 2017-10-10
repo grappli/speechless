@@ -46,7 +46,10 @@ for file in listdir('/data/TIB_dataset/transcripts'):
     filename = splitext(file)[0]
 
     command = 'avconv  -i /data/TIB_dataset/videos/{}.mp4 -y -ac 1 -ar 16000 -vn /data/TIB_dataset/videos/{}.wav'.format(filename, filename)
-    subprocess.call(command, shell=True)
+    retval = subprocess.check_output(command, shell=True)
+
+    if retval != 0:
+        continue
 
     segs.extend(get_segments('/data/TIB_dataset/transcripts/{}.xml'.format(filename)))
     files.extend(cut_wav(filename, '/data/TIB_dataset/videos/{}.wav'.format(filename), segs))
