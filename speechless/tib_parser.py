@@ -4,10 +4,20 @@ import csv
 from xml.etree import ElementTree
 import librosa
 import subprocess
+from shutil import copyfileobj
 
 def get_segments(file):
+    # change encoding to allow german character reading without error
+    firstline = "<?xml version='1.0' encoding='ISO8859-1'?>"
+    newfile = 'temp.xml'
+    with open(file, 'r') as from_file:
+        with open(newfile, 'w') as to_file:
+            from_file.readline()
+            to_file.write(firstline)
+            copyfileobj(from_file, to_file)
+
     segments = []
-    e = ElementTree.parse(file).getroot().findall('text')[0]
+    e = ElementTree.parse(newfile).getroot().findall('text')[0]
     for item in e.findall('phrase'):
         begin = item.get('start')
         end = item.get('end')
