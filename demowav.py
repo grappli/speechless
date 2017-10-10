@@ -45,8 +45,8 @@ def process_audio():
 
     os.remove(filename)
 
-def process_wav(filename, chunk_len=10.0, overlap_len=0.5):
-    data = librosa.load(filename, sr=16000)
+def process_wav(filename, chunk_len=10.0, overlap_len=0.5, rate=16000):
+    data = librosa.load(filename, sr=rate)
 
     if 1.0 * len(data) / rate > chunk_len:
         # segment into 10-second chunks with 1-second overlap
