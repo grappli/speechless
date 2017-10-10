@@ -6,6 +6,9 @@ import librosa
 import subprocess
 from shutil import copyfileobj
 
+from os import listdir
+from os.path import splitext
+
 def get_segments(file):
     # change encoding to allow german character reading without error
     firstline = "<?xml version='1.0' encoding='ISO8859-1'?>"
@@ -25,24 +28,30 @@ def get_segments(file):
         segments.append({'begin': begin, 'end': end, 'phrase': phrase})
     return segments
 
-def cut_wav(wav_file, segments):
+def cut_wav(file_id, wav_file, segments):
     data = librosa.load(wav_file, sr=16000)[0]
     files = []
     for segment in segments:
         wav_segment = data[segment['begin'] * 16000:segment['end'] * 16000]
-        file = wav_file + '_' + str(segment['begin']) + '.wav'
+        file = file_id + '_' + str(segment['begin']) + '.wav'
         librosa.output.write_wav(file, wav_segment, sr=16000)
         files.append(file)
 
     return files
 
-filename = '11406'
+segs = []
+files = []
+for file in listdir('/data/TIB_dataset/transcripts'):
 
-command = 'avconv  -i /data/TIB_dataset/videos/{}.mp4 -ac 1 -ar 16000 -vn /data/TIB_dataset/videos/{}.wav'.format(filename, filename)
-subprocess.call(command, shell=True)
+    filename = splitext(file)[0]
 
-segs = get_segments('/data/TIB_dataset/transcripts/{}.xml'.format(filename))
-files = cut_wav('/data/TIB_dataset/videos/{}.wav'.format(filename), segs)
+    command = 'avconv  -i /data/TIB_dataset/videos/{}.mp4 -y -ac 1 -ar 16000 -vn /data/TIB_dataset/videos/{}.wav'.format(filename, filename)
+    subprocess.call(command, shell=True)
+
+    segs.extend(get_segments('/data/TIB_dataset/transcripts/{}.xml'.format(filename)))
+    files.extend(cut_wav(filename, '/data/TIB_dataset/videos/{}.wav'.format(filename), segs))
+
+
 
 with open('file.csv', 'w', encoding='utf8') as csvfile:
     writer = csv.writer(csvfile)
