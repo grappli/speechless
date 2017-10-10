@@ -7,6 +7,7 @@ import os
 import io
 import sys
 from speechless.labeled_example import LabeledExample, LabeledExampleFromFile
+from path import Path
 
 from speechless.configuration import Configuration
 
@@ -15,7 +16,7 @@ def test_sample():
     filename = 'ALC_0062014047_h_00.wav'
 
     wav2letter = Configuration.german().load_best_german_model()
-    example = LabeledExampleFromFile(filename)
+    example = LabeledExampleFromFile(Path(filename))
 
     feed_speechless(wav2letter, example)
 
