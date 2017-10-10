@@ -9,6 +9,8 @@ import sys
 from speechless.labeled_example import LabeledExample, LabeledExampleFromFile
 from pathlib import Path
 
+import librosa
+
 from speechless.configuration import Configuration
 
 def test_sample():
@@ -16,7 +18,7 @@ def test_sample():
     filename = 'ALC_0062014047_h_00.wav'
 
     wav2letter = Configuration.german().load_best_german_model()
-    rate, data = wavfile.read(filename)
+    data = librosa.load(filename)
 
     ex = LabeledExample(get_raw_audio=lambda: data)
     feed_speechless(wav2letter, ex)
