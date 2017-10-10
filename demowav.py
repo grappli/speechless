@@ -18,7 +18,7 @@ def test_sample():
     filename = 'ALC_0062014047_h_00.wav'
 
     wav2letter = Configuration.german().load_best_german_model()
-    data = librosa.load(filename)[0]
+    data = librosa.load(filename, sr=16000)[0]
 
     ex = LabeledExample(get_raw_audio=lambda: data)
     feed_speechless(wav2letter, ex)
