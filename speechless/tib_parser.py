@@ -51,7 +51,7 @@ for file in listdir('/data/TIB_dataset/transcripts'):
 
     filename = splitext(file)[0]
 
-    command = 'avconv  -i /data/TIB_dataset/videos/{}.mp4 -y -ac 1 -ar 16000 -vn /data/TIB_dataset/videos/{}.wav'.format(filename, filename)
+    command = 'avconv  -i /data/TIB_dataset/videos/{}.mp4 -n -ac 1 -ar 16000 -vn /data/TIB_dataset/videos/{}.wav'.format(filename, filename)
     try:
         retval = subprocess.check_output(command, shell=True)
     except subprocess.CalledProcessError:
