@@ -5,7 +5,7 @@ from xml.etree import ElementTree
 import subprocess
 from shutil import copyfileobj
 from os import listdir
-from os.path import splitext
+from os.path import splitext, split
 from os import remove
 import string
 
@@ -70,4 +70,4 @@ for file in listdir('/data/TIB_dataset/transcripts'):
 with open('file.csv', 'w', encoding='utf8') as csvfile:
     writer = csv.writer(csvfile)
     for i, seg in enumerate(segs):
-        writer.writerow((splitext(files[i])[0], files[i], seg['phrase'], 'train'))
+        writer.writerow((splitext(split(files[i])[1])[0], files[i], seg['phrase'], 'train'))
