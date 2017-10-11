@@ -2,18 +2,20 @@ __author__ = 'Steffen'
 
 import csv
 from xml.etree import ElementTree
-import librosa
 import subprocess
 from shutil import copyfileobj
-
 from os import listdir
 from os.path import splitext
 from os import remove
 import string
 
+import librosa
+
 german_frequent_characters = list(string.ascii_lowercase + " 'äöüß")
 
 def clean_phrase(phrase):
+    phrase = phrase.replace('\n', ' ')
+    print phrase
     return ''.join([c for c in list(phrase.lower()) if c in german_frequent_characters])
 
 def get_segments(file):
