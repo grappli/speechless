@@ -14,7 +14,7 @@ import string
 german_frequent_characters = list(string.ascii_lowercase + " 'äöüß")
 
 def clean_phrase(phrase):
-    return str([c for c in list(phrase.lower()) if c in german_frequent_characters])
+    return ''.join([c for c in list(phrase.lower()) if c in german_frequent_characters])
 
 def get_segments(file):
     # change encoding to allow german character reading without error
@@ -68,4 +68,4 @@ for file in listdir('/data/TIB_dataset/transcripts'):
 with open('file.csv', 'w', encoding='utf8') as csvfile:
     writer = csv.writer(csvfile)
     for i, seg in enumerate(segs):
-        writer.writerow(('{}_{}'.format(filename, seg['begin']), files[i], seg['phrase'], 'train'))
+        writer.writerow((splitext(files[i])[0], files[i], seg['phrase'], 'train'))
