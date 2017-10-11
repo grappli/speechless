@@ -23,8 +23,8 @@ def get_segments(file):
     firstline = "<?xml version='1.0' encoding='ISO8859-1'?>"
     newfile = 'temp.xml'
     remove(newfile)
-    with open(file, 'r', encoding='utf8') as from_file:
-        with open(newfile, 'w', encoding='utf8') as to_file:
+    with open(file, 'r', encoding='ISO8859-1') as from_file:
+        with open(newfile, 'w', encoding='ISO8859-1') as to_file:
             from_file.readline()
             to_file.write(firstline)
             copyfileobj(from_file, to_file)
