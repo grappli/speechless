@@ -14,7 +14,7 @@ import librosa
 german_frequent_characters = list(string.ascii_lowercase + " 'äöüß")
 
 def clean_phrase(phrase):
-    phrase = phrase.replace('\n', ' ')
+    phrase = phrase.replace('\n', ' ').decode('utf-8')
     print(phrase)
     return ''.join([c for c in list(phrase.lower()) if c in german_frequent_characters])
 
