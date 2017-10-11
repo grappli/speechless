@@ -15,7 +15,7 @@ german_frequent_characters = list(string.ascii_lowercase + " 'äöüß")
 
 def clean_phrase(phrase):
     phrase = phrase.replace('\n', ' ')
-    print phrase
+    print(phrase)
     return ''.join([c for c in list(phrase.lower()) if c in german_frequent_characters])
 
 def get_segments(file):
