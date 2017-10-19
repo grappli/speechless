@@ -55,7 +55,7 @@ class AugmentedLabeledExampleFromFile(LabeledExample):
            self.augmentation == Augmentation.BackgroundMusic or
            self.augmentation == Augmentation.BackgroundSpeech):
 
-            background_wav = wavlib.random_wav(self.augmentation.value)
+            background_wav = self.wavlib.random_wav(self.augmentation.value)
             output = WavTools.mix_wavs_raw(self.audio_file, background_wav)
             return output
 
