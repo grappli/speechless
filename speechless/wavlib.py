@@ -51,8 +51,10 @@ class WavTools:
     def mix_wavs_raw(foreground_wav, background_wav, foreground_volume=0.6, background_volume=0.4):
         desired_sample_rate = 16000
 
-        foreground_data, foreground_rate = librosa.load(foreground_wav, sr=desired_sample_rate, res_type='kaiser_fast')
-        background_data, background_rate = librosa.load(background_wav, sr=desired_sample_rate, res_type='kaiser_fast')
+        foreground_data, foreground_rate = librosa.load(str(foreground_wav),
+                                                        sr=desired_sample_rate, res_type='kaiser_fast')
+        background_data, background_rate = librosa.load(str(background_wav),
+                                                        sr=desired_sample_rate, res_type='kaiser_fast')
         
         foreground_length = 1.0 * len(foreground_data) / foreground_rate
         background_length = 1.0 * len(background_data) / background_rate
