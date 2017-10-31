@@ -22,6 +22,7 @@ class WavTools:
         urls = list()
         pages = num_files / 15 + 1
         for page_num in range(int(pages)):
+            print('Scraping page ' + str(page_num))
             url = 'https://freesound.org/search/?q={}&f=license%3A%22Creative+Commons+0%22+type%3Awav&page={}'.format(tag, page_num + 1)
             page = requests.get(url).text
             regex = re.compile('href="(/people/(.*?)/sounds/(\d*?)/)"')
@@ -168,4 +169,4 @@ class WavTools:
 if __name__ == "__main__":
     directory = sys.argv[1]
     num_files = sys.argv[2]
-    WavTools.download_from_tag(directory=directory,num_files=num_files)
+    WavTools.download_from_tag(directory=directory,num_files=int(num_files))
