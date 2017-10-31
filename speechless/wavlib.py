@@ -59,6 +59,7 @@ class WavTools:
             download_url = url + 'download/'
             filename = re.findall(download_url + '(.*?)"', soundpage.text)[0]
             response = s.get('http://freesound.org' + download_url)
+            print('Downloading ' + url)
             with open('{}/{}'.format(directory, filename), 'wb') as outfile:
                 outfile.write(response.content)
 
