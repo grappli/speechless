@@ -167,4 +167,5 @@ class WavTools:
 
 if __name__ == "__main__":
     directory = sys.argv[1]
-    WavTools.download_from_tag(directory='/data/speechless-data/wav/environmental')
+    num_files = sys.argv[2]
+    WavTools.download_from_tag(directory=directory,num_files=num_files)
