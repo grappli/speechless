@@ -158,7 +158,9 @@ class Configuration:
 
     def test_model_grouped_by_loaded_corpus_name(self, wav2letter) -> ExpectationsVsPredictionsInGroupedBatches:
         def corpus_name(example: LabeledExampleFromFile) -> str:
-            return example.audio_directory.relative_to(self.corpus_directory).parts[0]
+            if 'TIB_dataset' in str(example.audio_directory):
+                return 'TIB'
+            return example.audio_directory.relative_to('/data/speechless-data/corpus/German').parts[0]
 
         corpus_by_name = self.corpus.grouped_by(corpus_name)
 
