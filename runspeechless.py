@@ -25,4 +25,6 @@ if __name__ == "__main__":
     parse = argparse.ArgumentParser()
     parse.add_argument('--train-tib', dest='train_tib', action='store_true')
     parse.add_argument('--a', dest='augment', action='store_true')
+    args = parse.parse_args()
+
     main(parse.train_tib, parse.augment)
