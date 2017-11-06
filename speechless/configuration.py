@@ -106,8 +106,8 @@ class Configuration:
 
         def tib_corpus(train_ratio: int = 0.9, include_training: bool = False):
             tibCorpus = Corpus.load(Path('/data/TIB_dataset/corpus.csv'), augment=False)
-            tibCorpus.remove_empty_wavs()
-            tibCorpus.save(corpus_csv_file=Path('/data/TIB_dataset/corpus.csv'), use_relative_audio_file_paths=False)
+            #tibCorpus.remove_empty_wavs()
+            #tibCorpus.save(corpus_csv_file=Path('/data/TIB_dataset/corpus.csv'), use_relative_audio_file_paths=False)
             train, test = TrainingTestSplit.randomly(train_ratio)(tibCorpus.examples)
             return Corpus(train if include_training else [], test)
 
