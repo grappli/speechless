@@ -171,7 +171,7 @@ class LabeledExample(LabeledSpectrogram):
 
     @lazy
     def duration_in_s(self) -> float:
-        print(self.id)
+        print(str(self))
         return len(self.get_raw_audio()) / self.sample_rate
 
     def __str__(self) -> str:
