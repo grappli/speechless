@@ -116,7 +116,8 @@ class Configuration:
 
         return Configuration(name="German-TIB-train",
                              corpus_from_directory=get_corpus,
-                             allowed_characters=german_frequent_characters)
+                             allowed_characters=german_frequent_characters,
+                             directories=default_data_directories)
 
     def train(self, wav2letter, run_name: str) -> None:
         wav2letter.train(self.batch_generator.training_batches(),
