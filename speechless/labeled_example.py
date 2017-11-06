@@ -104,7 +104,7 @@ class LabeledExample(LabeledSpectrogram):
 
     def _complex_spectrogram(self) -> ndarray:
         print(self.id)
-        print(self.duration_in_s)
+        print(self.duration_in_s())
         print(self.fourier_window_length)
         print(self.hop_length)
         return librosa.stft(y=self.get_raw_audio(), n_fft=self.fourier_window_length, hop_length=self.hop_length)
