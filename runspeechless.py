@@ -27,4 +27,4 @@ if __name__ == "__main__":
     parse.add_argument('--a', dest='augment', action='store_true')
     args = parse.parse_args()
 
-    main(parse.train_tib, parse.augment)
+    main(args.train_tib, args.augment)
