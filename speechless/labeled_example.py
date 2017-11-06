@@ -103,10 +103,6 @@ class LabeledExample(LabeledSpectrogram):
         return abs(self._complex_spectrogram())
 
     def _complex_spectrogram(self) -> ndarray:
-        print(self.id)
-        print(self.duration_in_s)
-        print(self.fourier_window_length)
-        print(self.hop_length)
         return librosa.stft(y=self.get_raw_audio(), n_fft=self.fourier_window_length, hop_length=self.hop_length)
 
     def mel_frequencies(self) -> List[float]:
@@ -171,7 +167,6 @@ class LabeledExample(LabeledSpectrogram):
 
     @lazy
     def duration_in_s(self) -> float:
-        print(str(self))
         return len(self.get_raw_audio()) / self.sample_rate
 
     def __str__(self) -> str:
@@ -219,7 +214,6 @@ class LabeledExampleFromFile(LabeledExample):
     def duration_in_s(self) -> float:
         try:
             duration = librosa.get_duration(filename=str(self.audio_file))
-            print(str(self.id) + ' ' + str(self.audio_file) + ' ' + str(duration))
             return duration
         except Exception as e:
             log("Failed to get duration of {}: {}".format(self.audio_file, e))

@@ -62,6 +62,13 @@ class Corpus:
     def summary(self) -> str:
         raise NotImplementedError
 
+    def remove_empty_wavs(self):
+        log('Removing empty wav files.')
+        self.training_examples = [example for example in self.training_examples if example.duration_in_s > 0.0]
+        self.test_examples = [example for example in self.test_examples if example.duration_in_s > 0.0]
+
+        self.examples = self.training_examples + self.test_examples
+
     def summarize_to_csv(self, summary_csv_file: Path) -> None:
         import csv
         with summary_csv_file.open('w', encoding='utf8') as csv_summary_file:
