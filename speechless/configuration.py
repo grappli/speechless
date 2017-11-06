@@ -105,7 +105,7 @@ class Configuration:
                                augment=augment)
 
         def tib_corpus(train_ratio: int = 0.9, include_training: bool = False):
-            tibCorpus = Corpus.load(Path('/data/speechless/TIB_dataset/corpus.csv'), augment=False)
+            tibCorpus = Corpus.load(Path('/data/TIB_dataset/corpus.csv'), augment=False)
             train, test = TrainingTestSplit.randomly(train_ratio)(tibCorpus.examples)
             return Corpus(train if include_training else [], test)
 
