@@ -110,7 +110,7 @@ class Configuration:
             return Corpus(train if include_training else [], test)
 
         def get_corpus(corpus_directory: Path):
-            oldCorpus = load_cached_corpus(corpus_directory)
+            oldCorpus = load_cached_corpus(Path('/data/speechless-data/corpus/German/'))
             tib = tib_corpus(train_ratio=0.9,include_training=include_training)
             return ComposedCorpus([oldCorpus, tib])
 
