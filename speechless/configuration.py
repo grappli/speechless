@@ -114,7 +114,12 @@ class Configuration:
             tib = tib_corpus(train_ratio=0.9,include_training=include_training)
             return ComposedCorpus([oldCorpus, tib])
 
-        return Configuration(name="German-TIB-train",
+        name = 'German-TIB'
+        if include_training:
+            name += '-train'
+        if augment:
+            name += '-augment'
+        return Configuration(name=name,
                              corpus_from_directory=get_corpus,
                              allowed_characters=german_frequent_characters,
                              directories=default_data_directories)

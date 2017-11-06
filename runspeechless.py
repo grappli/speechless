@@ -17,7 +17,7 @@ def main(train_tib, augment):
     if augment:
         run_name += '-augment'
 
-    tools.logLocation = '/data/{}.log'.format(run_name)
+    tools.add_file_log('/data/{}.log'.format(run_name))
 
     config.train(wav2letter, run_name=run_name)
 
