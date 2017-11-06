@@ -129,7 +129,8 @@ class Configuration:
                          tensor_board_log_directory=self.directories.tensorboard_log_base_directory / run_name,
                          net_directory=self.directories.nets_base_directory / run_name,
                          preview_labeled_spectrogram_batch=self.batch_generator.preview_batch(),
-                         batches_per_epoch=self.training_batches_per_epoch)
+                         batches_per_epoch=self.training_batches_per_epoch,
+                         callback=lambda: self.test_model_grouped_by_loaded_corpus_name(wav2letter))
 
     def train_from_beginning(self):
         from speechless.net import Wav2Letter

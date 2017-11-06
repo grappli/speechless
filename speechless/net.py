@@ -551,8 +551,11 @@ class Wav2Letter:
               preview_labeled_spectrogram_batch: List[LabeledSpectrogram],
               tensor_board_log_directory: Path,
               net_directory: Path,
-              batches_per_epoch: int):
-        print_preview_batch = lambda: log(self.test_and_predict_batch(preview_labeled_spectrogram_batch))
+              batches_per_epoch: int,
+              callback: Callable = None):
+        if not callback:
+            callback = lambda: log(self.test_and_predict_batch(preview_labeled_spectrogram_batch))
+        print_preview_batch = callback
 
         print_preview_batch()
         self.loss_net.fit_generator(self._loss_inputs_generator(labeled_spectrogram_batches), epochs=100000000,
