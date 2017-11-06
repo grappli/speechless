@@ -100,6 +100,8 @@ def paginate(sequence: List[E], page_size: int) -> Iterable[List[E]]:
         yield sequence[start:start + page_size]
 
 
+logLocation = '/data/run.log'  # TODO: fix this
+
 logger = getLogger("results")
 logger.setLevel(logging.INFO)
 
@@ -107,7 +109,6 @@ handler = StreamHandler(sys.stdout)
 handler.setLevel(logging.INFO)
 logger.addHandler(handler)
 
-logLocation = '/data/run.log'  # TODO: fix this
 fileHandler = logging.FileHandler(logLocation)
 fileHandler.setLevel(logging.INFO)
 logger.addHandler(fileHandler)
