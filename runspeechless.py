@@ -1,6 +1,5 @@
 from pathlib import Path
 import argparse
-from comtypes import _
 
 from speechless import tools
 from speechless import configuration
