@@ -76,6 +76,14 @@ class ExpectationsVsPredictions:
     def average_loss(self) -> float:
         return average_or_nan([r.loss for r in self.results])
 
+    @lazy
+    def total_word_errors(self):
+        return sum([r.word_error_count for r in self.results])
+
+    @lazy
+    def total_word_errors(self):
+        return self.total_word_errors / sum([r.expected_word_count for r in results])
+
     def __str__(self):
         return "\n\n".join(str(r) for r in self.results) + "\n\n" + self.summary_line() + "\n\n"
 

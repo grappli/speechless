@@ -6,7 +6,7 @@ from collections import OrderedDict
 from typing import Iterable, Dict, Callable, Optional, List, Tuple, Set, Union
 from xml.etree import ElementTree
 
-from speechless.corpus import ParsingException, TrainingTestSplit, ComposedCorpus
+from speechless.corpus import ParsingException, TrainingTestSplit, ComposedCorpus, Corpus
 from speechless.english_corpus import LibriSpeechCorpus, english_frequent_characters
 from speechless.labeled_example import LabeledExample, PositionalLabel
 from speechless.tools import read_text, single, single_or_none, name_without_extension, group, log
@@ -412,7 +412,24 @@ class GermanVoxforgeCorpus(GermanClarinCorpus):
             raise ParsingException("Error parsing annotation {}".format(xml_file))
 
 
+def german_corpus_with_tib(train_ratio: float = 0.9,
+                           include_training: bool = True):
+    def get_copora(base_directory: Path) -> ComposedCorpus:
+
+        tibCorpus = Corpus.load('/data/speechless/TIB_dataset/corpus.csv', augment=False)
+        train, test = TrainingTestSplit.randomly(train_ratio)(tibCorpus.examples)
+        tibCorpus = Corpus(train if include_training else [], test)
+
+        return ComposedCorpus(
+            clarin_corpora_sorted_by_size(base_directory=base_directory) +
+            [GermanVoxforgeCorpus(base_directory=base_directory)] +
+            [tibCorpus]
+        )
+    return get_copora
+
 def german_corpus(base_directory: Path) -> ComposedCorpus:
     return ComposedCorpus(
         clarin_corpora_sorted_by_size(base_directory=base_directory) +
-        [GermanVoxforgeCorpus(base_directory=base_directory)])
+        [GermanVoxforgeCorpus(base_directory=base_directory)]
+    )
+

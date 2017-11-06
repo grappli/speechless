@@ -87,7 +87,8 @@ class Corpus:
 
     @staticmethod
     def load(corpus_csv_file: Path,
-             sampled_training_example_count: Optional[int] = None) -> 'Corpus':
+             sampled_training_example_count: Optional[int] = None,
+             augment: bool = False) -> 'Corpus':
         import csv
         with corpus_csv_file.open(encoding='utf8') as opened_csv:
             reader = csv.reader(opened_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -98,9 +99,14 @@ class Corpus:
 
             examples = [
                 (
-                    # LabeledExampleFromFile(
                     AugmentedLabeledExampleFromFile(augmentation=Augmentation.BackgroundEnvironmental,
                         wavdirectory=speechless.configuration.default_data_directories.data_directory,
+                        audio_file=to_absolute(Path(audio_file_path)), id=id, label=label,
+                        positional_label=None if positional_label == "" else PositionalLabel.deserialize(
+                            positional_label)), Phase[phase])
+                for id, audio_file_path, label, phase, positional_label in reader] if augment else [
+                (
+                    LabeledExampleFromFile(
                         audio_file=to_absolute(Path(audio_file_path)), id=id, label=label,
                         positional_label=None if positional_label == "" else PositionalLabel.deserialize(
                             positional_label)), Phase[phase])

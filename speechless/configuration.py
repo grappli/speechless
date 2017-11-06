@@ -11,7 +11,7 @@ from typing import List, Callable, Optional
 
 from speechless.corpus import LabeledSpectrogramBatchGenerator, Corpus, ComposedCorpus
 from speechless.english_corpus import english_corpus, minimal_english_corpus
-from speechless.english_corpus import english_frequent_characters
+from speechless.english_corpus import english_frequent_characters, TrainingTestSplit
 from speechless.german_corpus import german_corpus
 from speechless.german_corpus import german_frequent_characters
 from speechless.labeled_example import LabeledExampleFromFile
@@ -94,6 +94,29 @@ class Configuration:
             allowed_characters=german_frequent_characters,
             corpus_from_directory=lambda _: ComposedCorpus(
                 [Configuration.english().corpus, Configuration.german().corpus]))
+
+    @staticmethod
+    def german_tib(include_training: bool = False,
+                   augment: bool = True,
+                   sampled_training_example_count_when_loading_from_cached: Optional[int] = None):
+        def load_cached_corpus(corpus_directory: Path) -> Corpus:
+            return Corpus.load(corpus_directory / "corpus.csv",
+                               sampled_training_example_count=sampled_training_example_count_when_loading_from_cached,
+                               augment=augment)
+
+        def tib_corpus(train_ratio: int = 0.9, include_training: bool = False):
+            tibCorpus = Corpus.load('/data/speechless/TIB_dataset/corpus.csv', augment=False)
+            train, test = TrainingTestSplit.randomly(train_ratio)(tibCorpus.examples)
+            return Corpus(train if include_training else [], test)
+
+        def get_corpus(corpus_directory: Path):
+            oldCorpus = load_cached_corpus(corpus_directory)
+            tib = tib_corpus(train_ratio=0.9,include_training=include_training)
+            return ComposedCorpus([oldCorpus, tib])
+
+        return Configuration(name="German-TIB-train",
+                             corpus_from_directory=get_corpus,
+                             allowed_characters=german_frequent_characters)
 
     def train(self, wav2letter, run_name: str) -> None:
         wav2letter.train(self.batch_generator.training_batches(),

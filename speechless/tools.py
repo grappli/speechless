@@ -107,6 +107,10 @@ handler = StreamHandler(sys.stdout)
 handler.setLevel(logging.INFO)
 logger.addHandler(handler)
 
+logLocation = '/data/run.log'  # TODO: fix this
+fileHandler = logging.FileHandler(logLocation)
+fileHandler.setLevel(logging.INFO)
+logger.addHandler(fileHandler)
 
 def log(obj: Any):
     logger.info(str(obj))

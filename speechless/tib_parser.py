@@ -67,7 +67,7 @@ for file in listdir('/data/TIB_dataset/transcripts'):
 
 
 
-with open('file.csv', 'w', encoding='utf8') as csvfile:
+with open('/data/TIB_dataset/corpus.csv', 'w', encoding='utf8') as csvfile:
     writer = csv.writer(csvfile)
     for i, seg in enumerate(segs):
-        writer.writerow((splitext(split(files[i])[1])[0], files[i], seg['phrase'], 'train'))
+        writer.writerow((splitext(split(files[i])[1])[0], files[i], seg['phrase'], 'training'))
