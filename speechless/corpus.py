@@ -218,13 +218,13 @@ class LabeledSpectrogramBatchGenerator:
 
         self.batch_size = batch_size
         self.spectrogram_cache_directory = spectrogram_cache_directory
-        self.labeled_training_spectrograms = [
+        self.labeled_training_spectrograms = filter(lambda x: x.duration_in_s > 0.0, [
             CachedLabeledSpectrogram(example, spectrogram_cache_directory=spectrogram_cache_directory)
-            for example in corpus.training_examples]
+            for example in corpus.training_examples])
 
-        self.labeled_test_spectrograms = [
+        self.labeled_test_spectrograms = filter(lambda x: x.duration_in_s > 0.0, [
             CachedLabeledSpectrogram(example, spectrogram_cache_directory=spectrogram_cache_directory)
-            for example in corpus.test_examples]
+            for example in corpus.test_examples])
 
         self.labeled_spectrograms = self.labeled_training_spectrograms + self.labeled_test_spectrograms
 
