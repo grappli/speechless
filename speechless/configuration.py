@@ -107,6 +107,7 @@ class Configuration:
         def tib_corpus(train_ratio: int = 0.9, include_training: bool = False):
             tibCorpus = Corpus.load(Path('/data/TIB_dataset/corpus.csv'), augment=False)
             train, test = TrainingTestSplit.randomly(train_ratio)(tibCorpus.examples)
+            print("Removing bad audio.")
             train = [example for example in train if example.duration_in_s > 0.0]
             test = [example for example in test if example.duration_in_s > 0.0]
             return Corpus(train if include_training else [], test)
