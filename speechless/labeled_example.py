@@ -217,9 +217,10 @@ class LabeledExampleFromFile(LabeledExample):
 
     @lazy
     def duration_in_s(self) -> float:
-        print(str(id) + ' ' + str(self.audio_file))
         try:
-            return librosa.get_duration(filename=str(self.audio_file))
+            duration = librosa.get_duration(filename=str(self.audio_file))
+            print(str(self.id) + ' ' + str(self.audio_file) + ' ' + str(duration))
+            return duration
         except Exception as e:
             log("Failed to get duration of {}: {}".format(self.audio_file, e))
             return 0
