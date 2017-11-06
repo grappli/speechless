@@ -98,7 +98,7 @@ class Corpus:
 
             examples = [
                 (
-                    # LabeledExampleFromFile(
+                    #LabeledExampleFromFile(
                     AugmentedLabeledExampleFromFile(augmentation=Augmentation.BackgroundEnvironmental,
                         wavdirectory=speechless.configuration.default_data_directories.data_directory,
                         audio_file=to_absolute(Path(audio_file_path)), id=id, label=label,
