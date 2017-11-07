@@ -82,14 +82,21 @@ class ExpectationsVsPredictions:
 
     @lazy
     def total_letter_error_rate(self):
-        return self.total_letter_errors / sum([r.expected_letter_count for r in self.results])
+        divisor = sum([r.expected_letter_count for r in self.results])
+        if divisor == 0:
+            return 0
+        return self.total_letter_errors / divisor
+
     @lazy
     def total_word_errors(self):
         return sum([r.word_error_count for r in self.results])
 
     @lazy
     def total_word_error_rate(self):
-        return self.total_word_errors / sum([r.expected_word_count for r in self.results])
+        divisor = sum([r.expected_word_count for r in self.results])
+        if divisor == 0:
+            return 0
+        return self.total_word_errors / divisor
 
     def __str__(self):
         return "\n\n".join(str(r) for r in self.results) + "\n\n" + self.summary_line() + "\n\n"
