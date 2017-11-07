@@ -34,6 +34,7 @@ class WavTools:
     def segment_wavs(directory):
         files = WavTools.absoluteFilePaths(directory)
         for file in files:
+            print('Segmenting file {}'.format(file))
             wav_data, _ = librosa.load(str(file), sr=16000, res_type='kaiser_fast')
             # segment into 10-second chunks
             for i in range(0, len(wav_data), 160000):
