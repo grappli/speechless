@@ -42,7 +42,7 @@ class WavTools:
                 stop_index = len(wav_data) if stop_index > len(wav_data) else i + 160000
                 data = wav_data[i:stop_index]
                 output_wav_file = os.path.splitext(file)[0] + str(int(i / 1000)) + '.wav'
-                librosa.output.write(output_wav_file, data, 16000)
+                librosa.output.write_wav(output_wav_file, data, 16000)
             os.remove(file)
 
     @staticmethod
