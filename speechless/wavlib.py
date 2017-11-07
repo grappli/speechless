@@ -33,6 +33,7 @@ class WavTools:
     @staticmethod
     def segment_wavs(directory):
         files = WavTools.absoluteFilePaths(directory)
+        stop_index = 0
         for file in files:
             print('Segmenting file {}'.format(file))
             wav_data, _ = librosa.load(str(file), sr=16000, res_type='kaiser_fast')
