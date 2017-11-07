@@ -33,7 +33,6 @@ class WavTools:
     @staticmethod
     def segment_wavs(directory):
         files = WavTools.absoluteFilePaths(directory)
-        stop_index = 0
         for file in files:
             print('Segmenting file {}'.format(file))
             try:
@@ -44,6 +43,7 @@ class WavTools:
                 continue
             # segment into 10-second chunks
             if len(wav_data) > 160000:
+                stop_index = 0
                 for i in range(0, len(wav_data), 160000):
                     stop_index = len(wav_data) if stop_index > len(wav_data) else i + 160000
                     data = wav_data[i:stop_index]
