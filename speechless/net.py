@@ -77,23 +77,29 @@ class ExpectationsVsPredictions:
         return average_or_nan([r.loss for r in self.results])
 
     @lazy
+    def total_letter_errors(self):
+        return sum([r.letter_error_count for r in self.results])
+
+    @lazy
+    def total_letter_error_rate(self):
+        return self.total_letter_errors / sum([r.expected_letter_count for r in self.results])
+    @lazy
     def total_word_errors(self):
         return sum([r.word_error_count for r in self.results])
 
     @lazy
-    def total_word_errors(self):
-        return self.total_word_errors / sum([r.expected_word_count for r in results])
+    def total_word_error_rate(self):
+        return self.total_word_errors / sum([r.expected_word_count for r in self.results])
 
     def __str__(self):
         return "\n\n".join(str(r) for r in self.results) + "\n\n" + self.summary_line() + "\n\n"
 
     def summary_line(self):
-        return "Average over {} examples: {:.1f} letter errors ({:.2f}%), {:.1f} word errors ({:.2f}%), loss {:.2f}.".format(
+        return "Over {} examples: {:.1f} letter errors ({:.2f}%), {:.1f} word errors ({:.2f}%), loss {:.2f}.".format(
             len(self.results),
-            self.average_letter_error_count, self.average_letter_error_rate * 100,
-            self.average_word_error_count, self.average_word_error_rate * 100,
+            self.total_letter_errors, self.total_letter_error_rate * 100,
+            self.total_word_errors, self.total_word_error_rate * 100,
             self.average_loss)
-
 
 class ExpectationsVsPredictionsInBatches(ExpectationsVsPredictions):
     def __init__(self, result_batches: List[ExpectationsVsPredictions]):

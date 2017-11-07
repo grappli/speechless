@@ -104,7 +104,6 @@ def paginate(sequence: List[E], page_size: int) -> Iterable[List[E]]:
 
 
 logger = getLogger("results")
-logger.setLevel(logging.INFO)
 
 handler = StreamHandler(sys.stdout)
 handler.setLevel(logging.INFO)
@@ -112,8 +111,10 @@ logger.addHandler(handler)
 
 def add_file_log(log_location):
     fileHandler = logging.FileHandler(log_location)
-    fileHandler.setLevel(logging.INFO)
+    fileHandler.setLevel(logging.WARN)
     logger.addHandler(fileHandler)
 
-def log(obj: Any):
+def log(obj: Any, writeFile: bool = False):
     logger.info(str(obj))
+    if writeFile:
+        logger.warn(str(obj))

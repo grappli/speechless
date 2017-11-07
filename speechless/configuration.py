@@ -170,7 +170,7 @@ class Configuration:
         result = wav2letter.test_and_predict_grouped_batches(OrderedDict(
             (corpus_name, self.batch_generator_for_corpus(corpus).test_batches()) for corpus_name, corpus in
             corpus_by_name.items()))
-        log(result)
+        log(result, True)
 
         return result
 
