@@ -36,14 +36,20 @@ class WavTools:
         stop_index = 0
         for file in files:
             print('Segmenting file {}'.format(file))
-            wav_data, _ = librosa.load(str(file), sr=16000, res_type='kaiser_fast')
+            try:
+                wav_data, _ = librosa.load(str(file), sr=16000, res_type='kaiser_fast')
+            except:
+                print('Error reading file: {}'.format(file))
+                os.remove(file)
+                continue
             # segment into 10-second chunks
-            for i in range(0, len(wav_data), 160000):
-                stop_index = len(wav_data) if stop_index > len(wav_data) else i + 160000
-                data = wav_data[i:stop_index]
-                output_wav_file = os.path.splitext(file)[0] + str(int(i / 1000)) + '.wav'
-                librosa.output.write_wav(output_wav_file, data, 16000)
-            os.remove(file)
+            if len(wav_data) > 160000:
+                for i in range(0, len(wav_data), 160000):
+                    stop_index = len(wav_data) if stop_index > len(wav_data) else i + 160000
+                    data = wav_data[i:stop_index]
+                    output_wav_file = os.path.splitext(file)[0] + str(int(i / 1000)) + '.wav'
+                    librosa.output.write_wav(output_wav_file, data, 16000)
+                os.remove(file)
 
     @staticmethod
     def download_files(urls, directory='wavfiles'):
