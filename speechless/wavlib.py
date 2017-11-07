@@ -168,5 +168,4 @@ class WavTools:
 
 if __name__ == "__main__":
     directory = sys.argv[1]
-    num_files = sys.argv[2]
-    WavTools.download_from_tag(directory=directory,num_files=int(num_files))
+    WavTools.segment_wavs(directory)
