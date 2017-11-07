@@ -147,6 +147,7 @@ class WavTools:
     @staticmethod
     def get_background_wav_list(wavdir):
         WavTools.wavlist = WavTools.absoluteFilePaths(wavdir)
+        random.shuffle(WavTools.wavlist)
 
     wavlist = []
     curr_wav_idx = 0
