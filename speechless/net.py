@@ -13,6 +13,7 @@ from keras.optimizers import Optimizer, Adam
 from lazy import lazy
 from numpy import ndarray, zeros, array, reshape, random, concatenate
 from typing import List, Callable, Iterable, Tuple, Dict, Optional
+import datetime
 
 from speechless.grapheme_enconding import CtcGraphemeEncoding, AsgGraphemeEncoding
 from speechless.labeled_example import LabeledSpectrogram
@@ -588,6 +589,7 @@ class Wav2Letter:
         class CustomCallback(Callback):
             def on_epoch_end(self_callback, epoch, logs=()):
                 if epoch % callback_step == 0:
+                    log('[{}] Epoch {}'.format(datetime.datetime.now(), epoch), True)
                     callback()
 
                 if epoch % save_step == 0 and epoch > 0:
