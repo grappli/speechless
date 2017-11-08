@@ -55,7 +55,7 @@ class WavTools:
     def clean_up_mess_i_made(directory):
         from collections import defaultdict
         files = WavTools.absoluteFilePaths(directory)
-        print('Number of files: {}'.format(len(files)))
+        print('Number of files: {}'.format(len(list(files))))
         stripfile = lambda x: ''.join([i for i in x if not i.isdigit()])
         uniqfiles = defaultdict(list())
         for f in files:
