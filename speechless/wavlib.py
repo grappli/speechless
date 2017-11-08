@@ -51,6 +51,31 @@ class WavTools:
                     librosa.output.write_wav(output_wav_file, data, 16000)
                 os.remove(file)
 
+    def clean_up_mess_i_made(self, directory):
+        from collections import defaultdict
+        files = WavTools.absoluteFilePaths(directory)
+        print('Number of files: {}'.format(len(files)))
+        stripfile = lambda x: ''.join([i for i in x if not i.isdigit()])
+        uniqfiles = defaultdict(list())
+        for f in files:
+            uniqfiles[stripfile(f)].append(f)
+        print('Number of actual files: {}'.format(len(uniqfiles.keys())))
+        length = lambda x: librosa.get_duration(filename=x)
+        keepfiles = []
+        for k in uniqfiles.keys():
+            allfiles = uniqfiles[k]
+            longest_len = 0
+            longest_file = ''
+            for f in allfiles:
+                if length(f) > longest_len:
+                    longest_file = f
+            keepfiles.append(longest_file)
+            print('Keeping file: {}'.format(longest_file))
+        for f in files:
+            if f not in keepfiles:
+                print(f)
+                #os.remove(f)
+
     @staticmethod
     def download_files(urls, directory='wavfiles'):
 
