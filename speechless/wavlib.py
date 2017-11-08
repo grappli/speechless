@@ -69,7 +69,9 @@ class WavTools:
             longest_len = 0
             longest_file = ''
             for f in allfiles:
-                if length(f) > longest_len:
+                filelen =  length(f)
+                if filelen > longest_len:
+                    longest_len = filelen
                     longest_file = f
             keepfiles.append(longest_file)
             print('Keeping file: {}'.format(longest_file))
