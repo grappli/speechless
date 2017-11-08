@@ -202,4 +202,4 @@ class WavTools:
 
 if __name__ == "__main__":
     directory = sys.argv[1]
-    WavTools.segment_wavs(directory)
+    WavTools.clean_up_mess_i_made(directory)
