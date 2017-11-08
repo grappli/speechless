@@ -57,7 +57,7 @@ class WavTools:
         files = WavTools.absoluteFilePaths(directory)
         print('Number of files: {}'.format(len(list(files))))
         stripfile = lambda x: ''.join([i for i in x if not i.isdigit()])
-        uniqfiles = defaultdict(list())
+        uniqfiles = defaultdict(list)
         for f in files:
             uniqfiles[stripfile(f)].append(f)
         print('Number of actual files: {}'.format(len(uniqfiles.keys())))
