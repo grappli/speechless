@@ -47,7 +47,7 @@ class WavTools:
                 for i in range(0, len(wav_data), 160000):
                     stop_index = len(wav_data) if stop_index > len(wav_data) else i + 160000
                     data = wav_data[i:stop_index]
-                    output_wav_file = os.path.splitext(file)[0] + str(int(i / 1000)) + '.wav'
+                    output_wav_file = os.path.splitext(file)[0] + str(int(i / 16000)) + '.wav'
                     librosa.output.write_wav(output_wav_file, data, 16000)
                 os.remove(file)
 
@@ -205,4 +205,4 @@ class WavTools:
 
 if __name__ == "__main__":
     directory = sys.argv[1]
-    WavTools.clean_up_mess_i_made(directory)
+    WavTools.segment_wavs(directory)
