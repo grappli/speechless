@@ -77,8 +77,7 @@ class WavTools:
             print('Keeping file: {}'.format(longest_file))
         for f in filelist:
             if f not in keepfiles:
-                print(f)
-                #os.remove(f)
+                os.remove(f)
 
     @staticmethod
     def download_files(urls, directory='wavfiles'):
