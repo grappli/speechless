@@ -55,10 +55,11 @@ class WavTools:
     def clean_up_mess_i_made(directory):
         from collections import defaultdict
         files = WavTools.absoluteFilePaths(directory)
-        print('Number of files: {}'.format(len(list(files))))
+        filelist = list(files)
+        print('Number of files: {}'.format(len(filelist)))
         stripfile = lambda x: ''.join([i for i in x if not i.isdigit()])
         uniqfiles = defaultdict(list)
-        for f in files:
+        for f in filelist:
             uniqfiles[stripfile(f)].append(f)
         print('Number of actual files: {}'.format(len(uniqfiles.keys())))
         length = lambda x: librosa.get_duration(filename=x)
@@ -72,7 +73,7 @@ class WavTools:
                     longest_file = f
             keepfiles.append(longest_file)
             print('Keeping file: {}'.format(longest_file))
-        for f in files:
+        for f in filelist:
             if f not in keepfiles:
                 print(f)
                 #os.remove(f)
