@@ -51,7 +51,8 @@ class WavTools:
                     librosa.output.write_wav(output_wav_file, data, 16000)
                 os.remove(file)
 
-    def clean_up_mess_i_made(self, directory):
+    @staticmethod
+    def clean_up_mess_i_made(directory):
         from collections import defaultdict
         files = WavTools.absoluteFilePaths(directory)
         print('Number of files: {}'.format(len(files)))
