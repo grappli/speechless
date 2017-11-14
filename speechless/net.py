@@ -434,6 +434,9 @@ class Wav2Letter:
         prediction_batch = self.predictive_net(self._input_batch_input)
         decoded = decoding_layer([prediction_batch, self._prediction_lengths_input])
 
+        numpy.save('predictions.npy', prediction_batch)
+        numpy.save('prediction_lens.npy', self._prediction_lengths_input)
+
         return Model(inputs=[self._input_batch_input, self._prediction_lengths_input], outputs=[decoded])
 
     def _decode_lambda(self, args):
@@ -573,12 +576,11 @@ class Wav2Letter:
 
         #print_preview_batch()
         labeled_spectrogram_batches = [next(labeled_spectrogram_batches)]
-        preview_labeled_spectrogram_batch = []
         numpy.save('labels.npy', [x.label for x in labeled_spectrogram_batches[0]])
         self.loss_net.fit_generator(self._loss_inputs_generator(labeled_spectrogram_batches), epochs=100000000,
                                     steps_per_epoch=batches_per_epoch,
                                     callbacks=self.create_callbacks(
-                                        callback=print_preview_batch,
+                                        callback=lambda x: print(''),
                                         tensor_board_log_directory=tensor_board_log_directory,
                                         net_directory=net_directory),
                                     initial_epoch=self.load_epoch if (self.load_epoch is not None) else 0)

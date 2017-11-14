@@ -44,9 +44,6 @@ class GraphemeEncodingBase:
         :param prediction_lengths:
         :return:
         """
-        import numpy as np
-        np.save('predictions.npy', prediction_batch)
-        np.save('prediction_lens.npy', prediction_lengths)
         return self.decode_grapheme_batch(argmax(prediction_batch, 2), prediction_lengths)
 
     def decode_grapheme_batch(self, grapheme_batch: ndarray, prediction_lengths: List[int],
