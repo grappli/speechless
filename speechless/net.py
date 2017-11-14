@@ -589,13 +589,15 @@ class Wav2Letter:
     def create_callbacks(self, callback: Callable[[], None], tensor_board_log_directory: Path, net_directory: Path,
                          callback_step: int = 1, save_step: int = 1) -> List[Callback]:
         class CustomCallback(Callback):
-            def on_epoch_end(self_callback, epoch, logs=()):
-                if epoch % callback_step == 0:
-                    log('[{}] Epoch {}'.format(datetime.datetime.now(), epoch), True)
+            def on_batch_end(self_callback, batch, logs=()):
                     for k in logs:
                         if k.endswith('output_conv'):
                             numpy.save('predictions.npy', logs[k])
                             numpy.save('prediction_lens.npy', self._prediction_lengths_input)
+
+            def on_epoch_end(self_callback, epoch, logs=()):
+                if epoch % callback_step == 0:
+                    log('[{}] Epoch {}'.format(datetime.datetime.now(), epoch), True)
                     callback()
 
                 if epoch % save_step == 0 and epoch > 0:
