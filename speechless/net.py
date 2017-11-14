@@ -574,7 +574,7 @@ class Wav2Letter:
         #print_preview_batch()
         #labeled_spectrogram_batches = [next(labeled_spectrogram_batches)]
         input_batch = [next(labeled_spectrogram_batches)]
-        numpy.save('labels.npy', [x.label for x in input_batch])
+        numpy.save('labels.npy', [x.label for x in input_batch[0]])
         numpy.save('predictions.npy', backend.eval(self.predictive_net(input_batch)))
 
         self.loss_net.fit_generator(self._loss_inputs_generator(labeled_spectrogram_batches), epochs=100000000,
