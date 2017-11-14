@@ -434,7 +434,7 @@ class Wav2Letter:
         prediction_batch = self.predictive_net(self._input_batch_input)
         decoded = decoding_layer([prediction_batch, self._prediction_lengths_input])
 
-        numpy.save('predictions.npy', prediction_batch)
+        numpy.save('predictions.npy', prediction_batch.eval())
         numpy.save('prediction_lens.npy', self._prediction_lengths_input)
 
         return Model(inputs=[self._input_batch_input, self._prediction_lengths_input], outputs=[decoded])
