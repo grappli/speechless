@@ -572,15 +572,14 @@ class Wav2Letter:
               callback: Callable = None):
         if not callback:
             callback = lambda: log(self.test_and_predict_batch(preview_labeled_spectrogram_batch))
-        print_preview_batch = callback
+        print_preview_batch = lambda: log(self.test_and_predict_batch(preview_labeled_spectrogram_batch))
 
-        #print_preview_batch()
-        labeled_spectrogram_batches = [next(labeled_spectrogram_batches)]
-        numpy.save('labels.npy', [x.label for x in labeled_spectrogram_batches[0]])
+        print_preview_batch()
+        numpy.save('labels.npy', [x.label for x in preview_labeled_spectrogram_batch])
         self.loss_net.fit_generator(self._loss_inputs_generator(labeled_spectrogram_batches), epochs=100000000,
                                     steps_per_epoch=batches_per_epoch,
                                     callbacks=self.create_callbacks(
-                                        callback=lambda x: print(''),
+                                        callback=print_preview_batch,
                                         tensor_board_log_directory=tensor_board_log_directory,
                                         net_directory=net_directory),
                                     initial_epoch=self.load_epoch if (self.load_epoch is not None) else 0)
