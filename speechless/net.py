@@ -434,9 +434,6 @@ class Wav2Letter:
         prediction_batch = self.predictive_net(self._input_batch_input)
         decoded = decoding_layer([prediction_batch, self._prediction_lengths_input])
 
-        numpy.save('predictions.npy', prediction_batch.eval())
-        numpy.save('prediction_lens.npy', self._prediction_lengths_input)
-
         return Model(inputs=[self._input_batch_input, self._prediction_lengths_input], outputs=[decoded])
 
     def _decode_lambda(self, args):
@@ -451,6 +448,9 @@ class Wav2Letter:
         import tensorflow as tf
 
         prediction_batch, prediction_lengths = args
+
+        numpy.save('predictions.npy', backend.eval(prediction_batch))
+        numpy.save('prediction_lens.npy', self._prediction_lengths_input)
 
         log_prediction_batch = tf.log(tf.transpose(prediction_batch, perm=[1, 0, 2]) + 1e-8)
         prediction_length_batch = tf.to_int32(tf.squeeze(prediction_lengths, axis=[1]))
