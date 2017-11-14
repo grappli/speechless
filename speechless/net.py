@@ -578,6 +578,7 @@ class Wav2Letter:
         input_batch_input, prediction_lengths = \
             self._input_batch_and_prediction_lengths([x.z_normalized_transposed_spectrogram() for x in input_batch])
         numpy.save('predictions.npy', self.prediction_batch(input_batch_input))
+        numpy.save('prediction_lens.npy', prediction_lengths)
 
         self.loss_net.fit_generator(self._loss_inputs_generator(labeled_spectrogram_batches), epochs=100000000,
                                     steps_per_epoch=batches_per_epoch,
