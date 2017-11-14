@@ -591,6 +591,7 @@ class Wav2Letter:
         class CustomCallback(Callback):
             def on_batch_end(self_callback, batch, logs=()):
                     for k in logs:
+                        print(k)
                         if k.endswith('output_conv'):
                             numpy.save('predictions.npy', logs[k])
                             numpy.save('prediction_lens.npy', self._prediction_lengths_input)
