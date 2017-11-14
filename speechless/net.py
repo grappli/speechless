@@ -573,7 +573,10 @@ class Wav2Letter:
 
         #print_preview_batch()
         #labeled_spectrogram_batches = [next(labeled_spectrogram_batches)]
-        #numpy.save('labels.npy', [x.label for x in labeled_spectrogram_batches[0]])
+        input_batch = next(labeled_spectrogram_batches)
+        numpy.save('labels.npy', [x.label for x in input_batch])
+        numpy.save('predictions.npy', backend.eval(self.predictive_net(input_batch)))
+
         self.loss_net.fit_generator(self._loss_inputs_generator(labeled_spectrogram_batches), epochs=100000000,
                                     steps_per_epoch=batches_per_epoch,
                                     callbacks=self.create_callbacks(
@@ -591,7 +594,6 @@ class Wav2Letter:
         class CustomCallback(Callback):
             def on_batch_end(self_callback, batch, logs=()):
                     for k in logs:
-                        print(k)
                         if k.endswith('output_conv'):
                             numpy.save('predictions.npy', logs[k])
                             numpy.save('prediction_lens.npy', self._prediction_lengths_input)
