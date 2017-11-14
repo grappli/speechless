@@ -573,7 +573,7 @@ class Wav2Letter:
 
         #print_preview_batch()
 
-        input_batch = next(labeled_spectrogram_batches)
+        input_batch = [next(labeled_spectrogram_batches)]
         numpy.save('labels.npy', [x.label for x in input_batch])
         input_batch_input, prediction_lengths = self._input_batch_and_prediction_lengths(input_batch)
         numpy.save('predictions.npy', self.prediction_batch(input_batch_input))
