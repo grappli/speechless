@@ -449,9 +449,6 @@ class Wav2Letter:
 
         prediction_batch, prediction_lengths = args
 
-        numpy.save('predictions.npy', backend.eval(prediction_batch))
-        numpy.save('prediction_lens.npy', self._prediction_lengths_input)
-
         log_prediction_batch = tf.log(tf.transpose(prediction_batch, perm=[1, 0, 2]) + 1e-8)
         prediction_length_batch = tf.to_int32(tf.squeeze(prediction_lengths, axis=[1]))
 
@@ -594,6 +591,10 @@ class Wav2Letter:
             def on_epoch_end(self_callback, epoch, logs=()):
                 if epoch % callback_step == 0:
                     log('[{}] Epoch {}'.format(datetime.datetime.now(), epoch), True)
+                    for k in logs:
+                        if k.endswith('output_conv'):
+                            numpy.save('predictions.npy', logs[k])
+                            numpy.save('prediction_lens.npy', self._prediction_lengths_input)
                     callback()
 
                 if epoch % save_step == 0 and epoch > 0:
