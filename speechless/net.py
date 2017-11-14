@@ -571,7 +571,7 @@ class Wav2Letter:
             callback = lambda: log(self.test_and_predict_batch(preview_labeled_spectrogram_batch))
         print_preview_batch = callback
 
-        print_preview_batch()
+        #print_preview_batch()
         labeled_spectrogram_batches = [labeled_spectrogram_batches[0]]
         preview_labeled_spectrogram_batch = []
         numpy.save('labels.npy', labeled_spectrogram_batches[0])
