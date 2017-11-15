@@ -35,7 +35,7 @@ def get_wav():
 def process_audio():
     filename = get_wav()
 
-    wav2letter = Configuration.german().load_best_german_model()
+    wav2letter = Configuration.german_tib(args.tib_train, args.augment).load_best_tib_model(args.tib_train, args.augment)
 
     segments = process_wav(filename)
     for idx, segment in enumerate(segments):
@@ -85,5 +85,7 @@ if __name__ == "__main__":
     parser.add_argument('--video', '-v', action='store_true', help='input is a video file')
     parser.add_argument('--filename', '-f', help='file containing audio')
 
+    parser.add_argument('--augment', '-a', action='store_true', help='use augmented model')
+    parser.add_argument('--tib_train', '-t', action='store_true', help='use model trained on TIB'
     args = parser.parse_args()
     process_audio()
