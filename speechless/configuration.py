@@ -250,6 +250,14 @@ class Configuration:
                                       use_ken_lm=use_ken_lm,
                                       language_model_name_extension=language_model_name_extension)
 
+    def load_best_tib_model(self, tib_train, augment):
+        if tib_train:
+            return self.load_german_model('German-TIB-train', load_epoch=3540)
+        elif augment:
+            return self.load_german_model('German-TIB-augment', load_epoch=2847)
+        else:
+            return self.load_german_model('German-TIB', load_epoch=3546)
+
 class LoggedRun:
     def __init__(self, action: Callable[[], None], name: str,
                  results_directory: Path = default_data_directories.test_results_directory):
