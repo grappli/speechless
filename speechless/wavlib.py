@@ -135,7 +135,10 @@ class WavTools:
         return output
 
     @staticmethod
-    def mix_wavs_raw(foreground_wav, background_wav, foreground_volume=0.6, background_volume=0.4):
+    def mix_wavs_raw(foreground_wav, background_wav, foreground_volume=0.6, background_volume=0.25):
+
+        foreground_volume = 1.0 - background_volume
+
         desired_sample_rate = 16000
 
         foreground_data, foreground_rate = librosa.load(str(foreground_wav),
