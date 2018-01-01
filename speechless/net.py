@@ -569,17 +569,9 @@ class Wav2Letter:
               callback: Callable = None):
         if not callback:
             callback = lambda: log(self.test_and_predict_batch(preview_labeled_spectrogram_batch))
-        print_preview_batch = lambda: log(self.test_and_predict_batch(preview_labeled_spectrogram_batch))
+        print_preview_batch = callback
 
-        #print_preview_batch()
-
-        input_batch = next(labeled_spectrogram_batches)
-        numpy.save('labels.npy', [x.label for x in input_batch])
-        input_batch_input, prediction_lengths = \
-            self._input_batch_and_prediction_lengths([x.z_normalized_transposed_spectrogram() for x in input_batch])
-        numpy.save('predictions.npy', self.prediction_batch(input_batch_input))
-        numpy.save('prediction_lens.npy', prediction_lengths)
-
+        print_preview_batch()
         self.loss_net.fit_generator(self._loss_inputs_generator(labeled_spectrogram_batches), epochs=100000000,
                                     steps_per_epoch=batches_per_epoch,
                                     callbacks=self.create_callbacks(
@@ -595,12 +587,6 @@ class Wav2Letter:
     def create_callbacks(self, callback: Callable[[], None], tensor_board_log_directory: Path, net_directory: Path,
                          callback_step: int = 1, save_step: int = 1) -> List[Callback]:
         class CustomCallback(Callback):
-            def on_batch_end(self_callback, batch, logs=()):
-                    for k in logs:
-                        if k.endswith('output_conv'):
-                            numpy.save('predictions.npy', logs[k])
-                            numpy.save('prediction_lens.npy', self._prediction_lengths_input)
-
             def on_epoch_end(self_callback, epoch, logs=()):
                 if epoch % callback_step == 0:
                     log('[{}] Epoch {}'.format(datetime.datetime.now(), epoch), True)
