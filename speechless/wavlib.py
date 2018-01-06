@@ -101,40 +101,6 @@ class WavTools:
                 outfile.write(response.content)
 
     @staticmethod
-    def mix_wav(foreground_wav, foreground_volume=0.6, background_volume=0.4):
-        desired_sample_rate = 16000
-        background_data = np.array()
-
-        # load foreground
-        foreground_data, foreground_rate = librosa.load(str(foreground_wav),
-                                                        sr=desired_sample_rate, res_type='kaiser_fast')
-
-        # load enough background wavs to cover length of foreground
-        first = True
-
-        while len(background_data) < len(foreground_data):
-
-            background_wav = WavTools.get_next_wav()
-            wav_background_data, wav_background_rate = librosa.load(str(background_wav),
-                                                        sr=desired_sample_rate, res_type='kaiser_fast')
-            if first:
-                first = False
-                background_data = background_data[WavTools.curr_wav_start:]
-
-            background_data = np.concatenate(background_data, wav_background_data, axis=0)
-
-        # shorten background to be same length as foreground
-        WavTools.curr_wav_start = len(background_data) - len(foreground_data)
-        WavTools.curr_wav_idx -= 1
-        background_data = background_data[:len(foreground_data)]
-
-        # Generate output
-        output = foreground_data * foreground_volume + \
-                 background_data[:len(foreground_data)] * background_volume
-
-        return output
-
-    @staticmethod
     def mix_wavs_raw(foreground_wav, background_wav, background_volume=0.15):
 
         foreground_volume = 1.0 - background_volume
