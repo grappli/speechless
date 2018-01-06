@@ -135,7 +135,7 @@ class WavTools:
         return output
 
     @staticmethod
-    def mix_wavs_raw(foreground_wav, background_wav, foreground_volume=0.6, background_volume=0.25):
+    def mix_wavs_raw(foreground_wav, background_wav, background_volume=0.15):
 
         foreground_volume = 1.0 - background_volume
 
@@ -196,10 +196,9 @@ class WavTools:
         return ''
 
     @staticmethod
-    def mix_wavs_to_file(foreground_wav, background_wav, output_wav_file,
-                 foreground_volume=0.6, background_volume=0.4, sample_rate=16000):
+    def mix_wavs_to_file(foreground_wav, background_wav, output_wav_file, background_volume, sample_rate=16000):
 
-        data = WavTools.mix_wavs_raw(foreground_wav, background_wav, foreground_volume, background_volume)
+        data = WavTools.mix_wavs_raw(foreground_wav, background_wav, background_volume)
         librosa.output.write(output_wav_file, data, sample_rate)
 
     def random_wav(self, directory):
