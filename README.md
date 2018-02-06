@@ -1,6 +1,17 @@
 # speechless
 Speech recognizer based on [wav2letter architecture](https://arxiv.org/pdf/1609.03193v2.pdf) built with [Keras](https://keras.io/).
 
+# Modifications for audio augmentation
+
+To train:
+
+    python3 runspeechless.py --lang=[en|de] [--a] [--train_tib]
+
+Models are stored in /data/speechless-data/nets. To run model on audio or video file, run
+
+   python3 demowav.py -f filename [-v] [-a] [-t]
+
+
 Supports CTC loss, KenLM and greedy decoding and transfer learning between different languages. ASG loss is currently not supported.
 
 Training for English with the [1000h LibriSpeech corpus](http://www.openslr.org/12) works out of the box, 

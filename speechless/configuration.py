@@ -162,7 +162,7 @@ class Configuration:
         def corpus_name(example: LabeledExampleFromFile) -> str:
             if 'TIB_dataset' in str(example.audio_directory):
                 return 'TIB'
-            return example.audio_directory.relative_to('/data/speechless-data/corpus/German').parts[0]
+            return example.audio_directory.relative_to('/data/speechless-data/corpus/').parts[1]
 
         corpus_by_name = self.corpus.grouped_by(corpus_name)
 

@@ -26,10 +26,6 @@ if __name__ == "__main__":
     parse.add_argument('--train-tib', dest='train_tib', action='store_true')
     parse.add_argument('--a', dest='augment', action='store_true')
 
-    config = Configuration.english()
-    wav2letter = config.load_best_english_model()
-
-    config.train(wav2letter, run_name='gen-samples')
     #args = parse.parse_args()
 
     #main(args.train_tib, args.augment)
