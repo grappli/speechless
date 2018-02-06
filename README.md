@@ -9,7 +9,7 @@ To train:
 
 Models are stored in /data/speechless-data/nets. To run model on audio or video file, run
 
-   python3 demowav.py -f filename [-v] [-a] [-t]
+    python3 demowav.py -f filename [-v] [-a] [-t]
 
 
 Supports CTC loss, KenLM and greedy decoding and transfer learning between different languages. ASG loss is currently not supported.
